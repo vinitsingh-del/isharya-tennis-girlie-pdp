@@ -31,7 +31,7 @@
   --sp:       clamp(52px,6vw,96px);
 }
 *, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -301,7 +301,8 @@ textarea.gi{resize:vertical;min-height:56px}
 /* SERVICE */
 .svc{padding:42px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
 .svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr)}
-.svc-c{background:var(--bg);padding:26px 16px;text-align:center}
+.svc-c{background:var(--bg);padding:26px 14px;text-align:center;min-width:0}
+.svc-c .svc-l,.svc-c .svc-s{overflow-wrap:break-word}
 .svc-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
 .svc-l{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
 .svc-s{font-size:11px;color:var(--muted);line-height:1.5}
@@ -366,7 +367,7 @@ textarea.gi{resize:vertical;min-height:56px}
   .info{border-left:none;border-top:1px solid var(--bdr);overflow-y:visible;height:auto;padding:24px 18px 110px}
   .fg{grid-template-columns:1fr}
   .rv-g{grid-template-columns:1fr}
-  .svc{grid-template-columns:repeat(3,1fr)}
+  .svg{grid-template-columns:repeat(3,1fr)}
   .dg{grid-template-columns:repeat(2,1fr)}
   .tw{grid-template-columns:1fr;gap:26px}
   .hd-nav{display:none}
@@ -427,7 +428,7 @@ textarea.gi{resize:vertical;min-height:56px}
   .rv-sum{flex-direction:column;align-items:flex-start;gap:18px}
   .rn{font-size:50px}
   .rcd{padding:18px 16px}
-  .svc{grid-template-columns:repeat(2,1fr)}
+  .svg{grid-template-columns:repeat(2,1fr)}
   .svc-c{padding:18px 12px}
   .satc{padding:10px 14px}
   .satc .ms{font-size:11px;max-width:44vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
