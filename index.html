@@ -8,7 +8,7 @@
 <meta name="build" content="v6-hero-motion">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;125,600;125,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ── iSHARYA BRAND TOKENS (exact from live site) ──────── */
 :root{
@@ -33,15 +33,15 @@
 }
 *, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button,input,select,textarea{font-family:inherit;outline:none}
 
 /* ── TYPOGRAPHY ───────────────────────────────────────── */
-.cg{font-family:'Cormorant Garamond',serif}
+.cg{font-family:'Archivo',sans-serif}
 .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:400;line-height:1.12;color:var(--white)}
+.sec-h{font-family:'Archivo',sans-serif;font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.18;color:var(--white);letter-spacing:.04em;text-transform:uppercase}
 .sec-s{font-size:13px;color:var(--sub);margin-top:7px;line-height:1.7}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
@@ -91,8 +91,8 @@ button,input,select,textarea{font-family:inherit;outline:none}
 @keyframes kb2{0%{transform:scale(1.08) translateX(1.5%)}100%{transform:scale(1) translateX(0)}}
 .hero-float{position:absolute;top:0;left:0;right:0;z-index:3;text-align:center;padding:24px 64px 30px;background:linear-gradient(to bottom,rgba(255,255,255,.97) 0%,rgba(255,255,255,.8) 60%,transparent 100%);pointer-events:none;display:none}
 .hf-eyebrow{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.hf-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,5.6vw,30px);font-weight:400;color:var(--white);line-height:1.15}
-.hf-price{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);margin-top:6px}
+.hf-title{font-family:'Archivo',sans-serif;font-size:clamp(16px,4.4vw,22px);font-weight:600;color:var(--white);line-height:1.25;letter-spacing:.03em;text-transform:uppercase}
+.hf-price{font-family:'Jost',sans-serif;font-weight:500;font-size:15px;color:var(--gold);margin-top:6px}
 
 /* Stage overlays */
 .g-badge{position:absolute;top:92px;left:18px;background:#FFFFFF;color:var(--gold);border:1px solid var(--gold);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 13px}
@@ -116,7 +116,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .bc a:hover{color:var(--gold)}
 .bc-d{color:var(--dim)}
 .info-coll{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
-.info-name{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:400;line-height:1.12;color:var(--white);margin-bottom:7px}
+.info-name{font-family:'Archivo',sans-serif;font-size:clamp(19px,2.1vw,25px);font-weight:600;line-height:1.22;color:var(--white);margin-bottom:7px;letter-spacing:.02em}
 .info-sku{font-size:10px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
 .rat-row{display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .rat-stars{color:var(--gold);font-size:12px;letter-spacing:2px}
@@ -152,10 +152,10 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .sig-row:last-child{border-bottom:none}
 .sig-n{font-size:10px;color:var(--dim);width:22px;flex-shrink:0;letter-spacing:.06em}
 .sig-l{flex:1;font-size:13px;color:var(--text)}
-.sig-p{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold);font-weight:500;flex-shrink:0}
+.sig-p{font-family:'Archivo',sans-serif;font-size:18px;color:var(--gold);font-weight:500;flex-shrink:0}
 
 /* PRICE */
-.p-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;letter-spacing:-.02em;color:var(--white)}
+.p-num{font-family:'Jost',sans-serif;font-weight:500;font-size:36px;font-weight:500;letter-spacing:-.02em;color:var(--white)}
 .p-note{font-size:11px;color:var(--muted);margin-left:6px}
 .p-emi{font-size:12px;color:var(--muted);margin-top:5px}
 .p-emi a{color:var(--gold)}
@@ -180,13 +180,13 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .spec-row{display:flex;border:1px solid var(--bdr)}
 .sc{flex:1;padding:13px 8px;text-align:center;border-right:1px solid var(--bdr)}
 .sc:last-child{border-right:none}
-.sc-v{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white)}
+.sc-v{font-family:'Archivo',sans-serif;font-size:20px;font-weight:500;color:var(--white)}
 .sc-l{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 
 /* OFFER */
 .oc{border:1px solid var(--bdr-l);padding:11px 13px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;transition:border-color .2s}
 .oc:hover{border-color:var(--gold)}
-.oc-code{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--gold);letter-spacing:.04em}
+.oc-code{font-family:'Jost',sans-serif;font-weight:600;letter-spacing:.08em;font-size:18px;font-weight:500;color:var(--gold);letter-spacing:.04em}
 .oc-desc{font-size:11px;color:var(--muted);margin-top:2px}
 .copy-b{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--bdr-l);padding:5px 10px;cursor:pointer;transition:.2s;flex-shrink:0}
 .copy-b:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
@@ -237,7 +237,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .pxt-c{max-width:540px;margin:0 auto;text-align:center}
 .pxt-c .pd{margin:0 auto}
 .pe{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#E8CCCE;margin-bottom:14px}
-.ph{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,54px);font-weight:300;line-height:1.06;color:#FFFFFF;margin-bottom:16px}
+.ph{font-family:'Archivo',sans-serif;font-size:clamp(22px,3.4vw,38px);font-weight:600;line-height:1.15;color:#FFFFFF;margin-bottom:16px;letter-spacing:.03em;text-transform:uppercase}
 .pd{font-size:14px;color:rgba(255,255,255,.82);line-height:1.75;max-width:400px}
 .pxt-r .pd{margin-left:auto}
 .pxl-hr{border:none;border-top:1px solid var(--bdr)}
@@ -264,7 +264,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .fc:hover .fi img{transform:scale(1.04)}
 .ft{padding:28px 30px 34px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center}
 .fte{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.fth{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2}
+.fth{font-family:'Archivo',sans-serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3;letter-spacing:.05em;text-transform:uppercase}
 .ftd{font-size:13px;color:var(--sub);line-height:1.7;max-width:380px;margin:0 auto}
 
 /* TRYON */
@@ -272,7 +272,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .tz{border:1px solid var(--bdr-l);padding:0 30px;text-align:center;cursor:pointer;transition:border-color .2s;height:420px;display:flex;flex-direction:column;justify-content:center}
 .tz:hover{border-color:var(--gold-lo)}
 .tze{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.tzh{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:8px}
+.tzh{font-family:'Archivo',sans-serif;font-size:20px;color:var(--white);margin-bottom:8px}
 .tzn{font-size:12px;color:var(--muted);line-height:1.6}
 .tzd{font-size:11px;color:var(--dim);margin-top:10px;line-height:1.5}
 
@@ -281,7 +281,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .bpt td{padding:13px 0;font-size:13px;border-bottom:1px solid var(--bdr);color:var(--sub)}
 .bpt td:last-child{text-align:right;color:var(--text)}
 .bpt-tot td{color:var(--white);font-size:15px;border-bottom:none;padding-top:18px}
-.bpt-tot td:last-child{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold)}
+.bpt-tot td:last-child{font-family:'Archivo',sans-serif;font-size:26px;color:var(--gold)}
 
 /* DETAILS */
 .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);max-width:900px;margin:0 auto}
@@ -291,7 +291,7 @@ textarea.gi{resize:vertical;min-height:56px}
 
 /* REVIEWS */
 .rv-sum{display:flex;align-items:flex-start;justify-content:center;gap:48px;margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid var(--bdr);flex-wrap:wrap;max-width:860px;margin-left:auto;margin-right:auto}
-.rn{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:var(--gold);line-height:1}
+.rn{font-family:'Jost',sans-serif;font-weight:400;font-size:64px;font-weight:300;color:var(--gold);line-height:1}
 .rs{color:var(--gold);font-size:15px;letter-spacing:3px;margin:4px 0}
 .rc{font-size:12px;color:var(--muted)}
 .rbs{flex:0 1 340px;min-width:220px}
@@ -306,7 +306,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .rcd-n{font-size:13px;font-weight:500;color:var(--white)}
 .rcd-d{font-size:11px;color:var(--dim)}
 .rcd-s{color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:8px}
-.rcd-h{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--white);margin-bottom:7px}
+.rcd-h{font-family:'Archivo',sans-serif;font-size:16px;color:var(--white);margin-bottom:7px}
 .rcd-b{font-size:12px;color:var(--sub);line-height:1.65}
 .rcd-v{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);margin-top:11px}
 
@@ -315,7 +315,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr);max-width:1200px;margin:0 auto}
 .svc-c{background:var(--bg);padding:26px 14px;text-align:center;min-width:0}
 .svc-c .svc-l,.svc-c .svc-s{overflow-wrap:break-word}
-.svc-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
+.svc-n{font-family:'Archivo',sans-serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
 .svc-l{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
 .svc-s{font-size:11px;color:var(--muted);line-height:1.5}
 
@@ -324,7 +324,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .satc.show{transform:translateY(0)}
 .si{display:flex;flex-direction:column;gap:2px}
 .si-n{font-size:12px;font-weight:500;color:var(--white)}
-.si-p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold)}
+.si-p{font-family:'Archivo',sans-serif;font-size:22px;color:var(--gold)}
 .sb{flex-shrink:0;padding:12px 32px;background:var(--gold);color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
 .sb:hover{background:var(--gold-hi)}
 
@@ -338,7 +338,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .mbox{background:var(--bg-s);border:1px solid var(--bdr-l);width:100%;max-width:440px;max-height:92vh;overflow-y:auto;padding:36px;position:relative}
 .mx{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s}
 .mx:hover{color:var(--white)}
-.mt{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--white);margin-bottom:6px}
+.mt{font-family:'Jost',sans-serif;font-weight:500;font-size:26px;color:var(--white);margin-bottom:6px}
 .ms{font-size:12px;color:var(--muted);margin-bottom:22px;line-height:1.65}
 .mf{margin-bottom:11px}
 .mf label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
@@ -366,7 +366,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .mob-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
 .mob-hd img{height:28px;}
 .mob-x{background:none;border:none;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
-.mob-a{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--white);padding:13px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s}
+.mob-a{font-family:'Archivo',sans-serif;font-size:22px;color:var(--white);padding:13px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s}
 .mob-a:hover,.mob-a.sale{color:var(--gold)}
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
@@ -522,7 +522,7 @@ textarea.gi{resize:vertical;min-height:56px}
     </div>
     <div class="gal-stage">
       <div class="hero-float"><div class="hf-eyebrow">Tennis Collection</div><div class="hf-title">Tennis Girlie Square Front Back Earrings</div>
-        <div class="hf-price">Rs.3,999 <span style="font-size:11px;color:var(--muted);font-family:'DM Sans',sans-serif">MRP incl. taxes</span></div></div>
+        <div class="hf-price">Rs.3,999 <span style="font-size:11px;color:var(--muted);font-family:'Jost',sans-serif">MRP incl. taxes</span></div></div>
       <div class="gslide on"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080" alt="Tennis Girlie Square Front Back Earrings by iSharya"></div>
       <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1080" alt="Detail view"></div>
       <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1080" alt="Worn shot"></div>
