@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>Tennis Girlie Square Front Back Earrings | iSharya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+/* ── iSHARYA BRAND TOKENS (exact from live site) ──────── */
+:root{
+  --bg:       #111111;
+  --bg-s:     #191919;
+  --bg-el:    #222222;
+  --bdr:      #2A2A2A;
+  --bdr-l:    #333333;
+  --gold:     #C9A870;
+  --gold-hi:  #DFC082;
+  --gold-lo:  #8B6840;
+  --white:    #FFFFFF;
+  --text:     #F0EBE3;
+  --sub:      #AAAAAA;
+  --muted:    #777777;
+  --dim:      #4A4A4A;
+  --ok:       #5DBD7A;
+  --err:      #E05050;
+  --max:      1440px;
+  --px:       clamp(16px,4vw,64px);
+  --sp:       clamp(52px,6vw,96px);
+}
+*, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,select,textarea{font-family:inherit;outline:none}
+
+/* ── TYPOGRAPHY ───────────────────────────────────────── */
+.cg{font-family:'Cormorant Garamond',serif}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:400;line-height:1.12;color:var(--white)}
+.sec-s{font-size:13px;color:var(--sub);margin-top:7px;line-height:1.7}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── OFFER BAR ────────────────────────────────────────── */
+.ob{background:var(--gold);color:#111;height:34px;overflow:hidden;display:flex;align-items:center}
+.ob-track{display:flex;width:max-content;animation:ticker 28s linear infinite;white-space:nowrap}
+.ob-track span{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:0 36px}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── HEADER ───────────────────────────────────────────── */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(17,17,17,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:var(--max);margin:0 auto;padding:0 var(--px);gap:16px}
+.hd-logo img{height:30px;object-fit:contain;filter:brightness(0) invert(1)}
+.hd-nav{display:flex;gap:28px;list-style:none}
+.hd-nav a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.hd-nav a:hover{color:var(--white)}
+.hd-nav a.sale{color:var(--gold)}
+.hd-r{display:flex;align-items:center;gap:18px}
+.hd-r a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.hd-r a:hover{color:var(--gold)}
+.cart-badge{background:var(--gold);color:#111;font-size:9px;font-weight:700;border-radius:50%;width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;margin-left:-3px;vertical-align:super}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.burger span{display:block;width:22px;height:1px;background:var(--white)}
+
+/* ── PDP HERO ─────────────────────────────────────────── */
+.pdp-hero{display:grid;grid-template-columns:1fr 480px;min-height:calc(100vh - 94px);max-width:var(--max);margin:0 auto}
+
+/* Gallery: 68px thumb strip | main stage */
+.gal{position:sticky;top:60px;height:calc(100vh - 60px);display:grid;grid-template-columns:68px 1fr}
+.gal-thumbs{border-right:1px solid var(--bdr);display:flex;flex-direction:column;gap:6px;padding:14px 8px;overflow-y:auto;scrollbar-width:none;background:var(--bg-s)}
+.gal-thumbs::-webkit-scrollbar{display:none}
+.gthumb{width:52px;height:56px;border:1px solid var(--bdr);cursor:pointer;overflow:hidden;flex-shrink:0;transition:border-color .2s}
+.gthumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gthumb:hover img{transform:scale(1.07)}
+.gthumb.on{border-color:var(--gold)}
+.gal-stage{position:relative;overflow:hidden;background:#0C0C0C}
+.gslide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
+.gslide.on{opacity:1}
+.gslide img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* Stage overlays */
+.g-badge{position:absolute;top:18px;left:18px;background:var(--gold);color:#111;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px}
+.g-acts{position:absolute;top:18px;right:18px;display:flex;gap:7px}
+.gact{background:rgba(17,17,17,.72);border:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;cursor:pointer;transition:.2s}
+.gact:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.g-pills{position:absolute;bottom:0;left:0;right:0;padding:16px 18px 18px;display:flex;gap:7px;flex-wrap:wrap;background:linear-gradient(to top,rgba(12,12,12,.9) 0%,transparent 100%)}
+.gpill{background:rgba(25,25,25,.8);border:1px solid rgba(255,255,255,.1);color:rgba(240,235,227,.8);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;cursor:pointer;transition:.2s;backdrop-filter:blur(6px)}
+.gpill:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.g-ct{position:absolute;bottom:18px;right:18px;font-size:11px;color:var(--dim);letter-spacing:.07em}
+
+/* ── INFO PANEL ───────────────────────────────────────── */
+.info{border-left:1px solid var(--bdr);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--bdr) transparent}
+.info::-webkit-scrollbar{width:3px}
+.info::-webkit-scrollbar-thumb{background:var(--bdr-l)}
+
+/* Title block */
+.info-top{padding:28px 36px 0}
+.bc{font-size:10px;color:var(--dim);letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:16px}
+.bc a{color:var(--dim);transition:color .2s}
+.bc a:hover{color:var(--gold)}
+.bc-d{color:var(--dim)}
+.info-coll{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+.info-name{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:400;line-height:1.12;color:var(--white);margin-bottom:7px}
+.info-sku{font-size:10px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.rat-row{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.rat-stars{color:var(--gold);font-size:12px;letter-spacing:2px}
+.rat-txt{font-size:12px;color:var(--muted)}
+.rat-txt a{color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:0}
+.chip{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--bdr-l);padding:4px 10px}
+
+/* ── IROW SYSTEM ──────────────────────────────────────── */
+/* Exact Mia pattern: 54px tag | content */
+.info-body{padding:0 36px 110px}
+.irow{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--bdr);align-items:start}
+.irow:first-child{border-top:none;padding-top:24px}
+.itag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-top:3px;line-height:1.5}
+.ib{min-width:0}
+.il{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+
+/* CERT */
+.cert-p{font-size:12px;color:var(--sub);line-height:1.65;margin-bottom:12px}
+.trust-badges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.trust-badges img{width:100%;height:34px;object-fit:contain;opacity:.7;filter:brightness(0) invert(.8)}
+
+/* UGC mini-strip */
+.mini-ugc{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.mu-item{height:78px;overflow:hidden;position:relative;cursor:pointer}
+.mu-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.mu-item:hover img{transform:scale(1.07)}
+.mu-name{position:absolute;bottom:0;left:0;right:0;padding:5px 6px;font-size:10px;color:rgba(255,255,255,.8);background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 100%);letter-spacing:.04em}
+
+/* SIGNALS */
+.sig-list{display:flex;flex-direction:column;gap:0}
+.sig-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bdr)}
+.sig-row:last-child{border-bottom:none}
+.sig-n{font-size:10px;color:var(--dim);width:22px;flex-shrink:0;letter-spacing:.06em}
+.sig-l{flex:1;font-size:13px;color:var(--text)}
+.sig-p{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold);font-weight:500;flex-shrink:0}
+
+/* PRICE */
+.p-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;letter-spacing:-.02em;color:var(--white)}
+.p-note{font-size:11px;color:var(--muted);margin-left:6px}
+.p-emi{font-size:12px;color:var(--muted);margin-top:5px}
+.p-emi a{color:var(--gold)}
+.qty-r{display:flex;align-items:center;gap:12px;margin:16px 0}
+.qty-l{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:40px;flex-shrink:0}
+.qty-w{display:flex;align-items:center;border:1px solid var(--bdr-l)}
+.qb{width:36px;height:36px;background:none;border:none;color:var(--white);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.qb:hover{background:var(--bg-el)}
+.qv{width:40px;height:36px;background:none;border:none;border-left:1px solid var(--bdr);border-right:1px solid var(--bdr);color:var(--white);text-align:center;font-size:14px}
+.cta-s{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
+.btn-g{display:block;width:100%;padding:15px;background:var(--gold);color:#111;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-align:center;border:none;cursor:pointer;transition:background .2s}
+.btn-g:hover{background:var(--gold-hi)}
+.btn-o{display:block;width:100%;padding:14px;background:transparent;color:var(--white);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-align:center;border:1px solid var(--bdr-l);cursor:pointer;transition:.2s}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.btn-t{display:block;width:100%;padding:12px;background:transparent;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;text-align:center;border:1px solid var(--bdr);cursor:pointer;transition:.2s}
+.btn-t:hover{color:var(--white);border-color:var(--bdr-l)}
+.pay-r{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pay-l{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-right:2px}
+.pbg{padding:3px 8px;background:var(--bg-el);border:1px solid var(--bdr);font-size:9px;font-weight:600;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+
+/* SPEC */
+.spec-row{display:flex;border:1px solid var(--bdr)}
+.sc{flex:1;padding:13px 8px;text-align:center;border-right:1px solid var(--bdr)}
+.sc:last-child{border-right:none}
+.sc-v{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white)}
+.sc-l{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+
+/* OFFER */
+.oc{border:1px solid var(--bdr-l);padding:11px 13px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;transition:border-color .2s}
+.oc:hover{border-color:var(--gold)}
+.oc-code{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--gold);letter-spacing:.04em}
+.oc-desc{font-size:11px;color:var(--muted);margin-top:2px}
+.copy-b{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--bdr-l);padding:5px 10px;cursor:pointer;transition:.2s;flex-shrink:0}
+.copy-b:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+
+/* CHECK */
+.pin-r{display:flex}
+.pin-i{flex:1;background:var(--bg-s);border:1px solid var(--bdr-l);border-right:none;color:var(--white);font-size:13px;padding:10px 12px}
+.pin-i::placeholder{color:var(--dim)}
+.pin-b{background:var(--bg-el);border:1px solid var(--bdr-l);color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:10px 13px;cursor:pointer;transition:.2s;flex-shrink:0}
+.pin-b:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+.pin-re{font-size:12px;color:var(--muted);margin-top:7px;min-height:18px}
+.pin-re.ok{color:var(--ok)}
+.pin-re.fail{color:var(--err)}
+
+/* GIFT */
+.gt-r{display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.gt-l{font-size:13px;color:var(--white)}
+.sw{position:relative;width:40px;height:22px;flex-shrink:0}
+.sw input{opacity:0;width:0;height:0}
+.sw-t{position:absolute;inset:0;background:var(--bg-el);border:1px solid var(--bdr-l);border-radius:11px;cursor:pointer;transition:.3s}
+.sw-t::before{content:'';position:absolute;width:14px;height:14px;left:3px;top:3px;background:var(--dim);border-radius:50%;transition:.3s}
+.sw input:checked+.sw-t{background:var(--gold);border-color:var(--gold)}
+.sw input:checked+.sw-t::before{transform:translateX(18px);background:#111}
+.gf{display:none;flex-direction:column;gap:8px;margin-top:14px}
+.gf.open{display:flex}
+.gi{background:var(--bg-s);border:1px solid var(--bdr-l);color:var(--white);font-size:13px;padding:10px 12px;width:100%}
+.gi::placeholder{color:var(--dim)}
+.gi:focus{border-color:var(--gold-lo)}
+textarea.gi{resize:vertical;min-height:56px}
+.gwr{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted)}
+.gwr input{accent-color:var(--gold)}
+
+/* ── BELOW FOLD ───────────────────────────────────────── */
+/* PARALLAX */
+.pxl-panel{position:relative;height:86vh;overflow:hidden;display:flex;align-items:center}
+.pxl-bg{position:absolute;inset:-26%;background-size:cover;background-position:center;will-change:transform}
+.ov-l{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,11,11,.92) 0%,rgba(11,11,11,.4) 55%,transparent 100%)}
+.ov-r{position:absolute;inset:0;background:linear-gradient(to left,rgba(11,11,11,.92) 0%,rgba(11,11,11,.4) 55%,transparent 100%)}
+.ov-c{position:absolute;inset:0;background:rgba(11,11,11,.6)}
+.pxl-ct{position:relative;z-index:2;max-width:var(--max);width:100%;margin:0 auto;padding:0 var(--px)}
+.pxt{max-width:460px}
+.pxt-r{max-width:460px;margin-left:auto;text-align:right}
+.pxt-c{max-width:540px;margin:0 auto;text-align:center}
+.pxt-c .pd{margin:0 auto}
+.pe{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.ph{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,54px);font-weight:300;line-height:1.06;color:var(--white);margin-bottom:16px}
+.pd{font-size:14px;color:rgba(240,235,227,.58);line-height:1.75;max-width:400px}
+.pxt-r .pd{margin-left:auto}
+.pxl-hr{border:none;border-top:1px solid var(--bdr)}
+
+/* COMMUNITY */
+.ugc-s{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;cursor:grab;padding-bottom:2px}
+.ugc-s::-webkit-scrollbar{display:none}
+.ui{flex:0 0 auto;width:200px;height:248px;overflow:hidden;position:relative}
+.ui img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.ui:hover img{transform:scale(1.06)}
+.uov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%);opacity:0;transition:opacity .3s}
+.ui:hover .uov{opacity:1}
+.ucap{position:absolute;bottom:0;left:0;right:0;padding:13px}
+.un{font-size:11px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.04em}
+.uno{font-size:10px;color:rgba(255,255,255,.55);margin-top:2px}
+
+/* FEATURES */
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr)}
+.fc{background:var(--bg);overflow:hidden}
+.fi{overflow:hidden}
+.fi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.fc:hover .fi img{transform:scale(1.04)}
+.ft{padding:28px 32px}
+.fte{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.fth{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2}
+.ftd{font-size:13px;color:var(--sub);line-height:1.7}
+
+/* TRYON */
+.tw{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.tz{border:1px solid var(--bdr-l);padding:48px 30px;text-align:center;cursor:pointer;transition:border-color .2s}
+.tz:hover{border-color:var(--gold-lo)}
+.tze{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.tzh{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:8px}
+.tzn{font-size:12px;color:var(--muted);line-height:1.6}
+.tzd{font-size:11px;color:var(--dim);margin-top:10px;line-height:1.5}
+
+/* PRICE BREAKUP */
+.bpt{width:100%;border-collapse:collapse;max-width:560px}
+.bpt td{padding:13px 0;font-size:13px;border-bottom:1px solid var(--bdr);color:var(--sub)}
+.bpt td:last-child{text-align:right;color:var(--text)}
+.bpt-tot td{color:var(--white);font-size:15px;border-bottom:none;padding-top:18px}
+.bpt-tot td:last-child{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold)}
+
+/* DETAILS */
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);max-width:900px}
+.dc{background:var(--bg);padding:17px 20px}
+.dl{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.dv{font-size:14px;color:var(--text)}
+
+/* REVIEWS */
+.rv-sum{display:flex;align-items:flex-start;gap:36px;margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--bdr);flex-wrap:wrap}
+.rn{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:var(--gold);line-height:1}
+.rs{color:var(--gold);font-size:15px;letter-spacing:3px;margin:4px 0}
+.rc{font-size:12px;color:var(--muted)}
+.rbs{flex:1;min-width:200px}
+.rb-r{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.rb-l{font-size:11px;color:var(--muted);width:34px;text-align:right;flex-shrink:0}
+.rb-t{flex:1;height:2px;background:var(--bdr-l)}
+.rb-f{height:100%;background:var(--gold);transition:width 1.2s ease}
+.rb-p{font-size:10px;color:var(--dim);width:30px;flex-shrink:0}
+.rv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);margin-bottom:26px}
+.rcd{background:var(--bg-s);padding:24px}
+.rcd-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+.rcd-n{font-size:13px;font-weight:500;color:var(--white)}
+.rcd-d{font-size:11px;color:var(--dim)}
+.rcd-s{color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:8px}
+.rcd-h{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--white);margin-bottom:7px}
+.rcd-b{font-size:12px;color:var(--sub);line-height:1.65}
+.rcd-v{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);margin-top:11px}
+
+/* SERVICE */
+.svc{padding:42px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr)}
+.svc-c{background:var(--bg);padding:26px 16px;text-align:center}
+.svc-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
+.svc-l{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+.svc-s{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* STICKY ATC */
+.satc{position:fixed;bottom:0;left:0;right:0;background:rgba(17,17,17,.97);backdrop-filter:blur(14px);border-top:1px solid var(--bdr-l);padding:12px var(--px);z-index:90;display:none;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .3s ease}
+.satc.show{transform:translateY(0)}
+.si{display:flex;flex-direction:column;gap:2px}
+.si-n{font-size:12px;font-weight:500;color:var(--white)}
+.si-p{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold)}
+.sb{flex-shrink:0;padding:12px 32px;background:var(--gold);color:#111;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
+.sb:hover{background:var(--gold-hi)}
+
+/* FLOATING */
+.try-f{position:fixed;right:0;bottom:100px;z-index:88;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);background:var(--bg-s);border:1px solid var(--bdr-l);border-right:none;border-top:2px solid var(--gold);color:var(--muted);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:13px 10px;cursor:pointer;transition:.2s}
+.try-f:hover{background:var(--gold);color:#111;border-color:var(--gold);border-right:none}
+
+/* MODAL */
+.mbg{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.mbg.open{display:flex}
+.mbox{background:var(--bg-s);border:1px solid var(--bdr-l);width:100%;max-width:440px;max-height:92vh;overflow-y:auto;padding:36px;position:relative}
+.mx{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s}
+.mx:hover{color:var(--white)}
+.mt{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--white);margin-bottom:6px}
+.ms{font-size:12px;color:var(--muted);margin-bottom:22px;line-height:1.65}
+.mf{margin-bottom:11px}
+.mf label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+.mf input,.mf select{width:100%;background:var(--bg-el);border:1px solid var(--bdr-l);color:var(--white);font-size:14px;padding:10px 12px;transition:border-color .2s}
+.mf input:focus,.mf select:focus{border-color:var(--gold-lo)}
+.mf select option{background:var(--bg-el)}
+.mf2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mfc{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);margin-bottom:18px}
+.mfc input{accent-color:var(--gold)}
+
+/* LIGHTBOX */
+.lbbg{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:210;display:none;align-items:center;justify-content:center;padding:24px}
+.lbbg.open{display:flex}
+.lb{position:relative;max-width:780px;width:100%}
+.lbx{position:absolute;top:-36px;right:0;background:none;border:none;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:color .2s}
+.lbx:hover{color:var(--white)}
+.lb img{width:100%;display:block}
+.lb-nav{display:flex;justify-content:space-between;margin-top:12px;gap:8px}
+.lbn{background:var(--bg-el);border:1px solid var(--bdr);color:var(--white);padding:9px 20px;cursor:pointer;font-size:10px;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.lbn:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+
+/* MOBILE NAV */
+.mob{display:none;position:fixed;inset:0;background:var(--bg);z-index:160;flex-direction:column;padding:24px var(--px);overflow-y:auto}
+.mob.open{display:flex}
+.mob-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+.mob-hd img{height:28px;filter:brightness(0) invert(1)}
+.mob-x{background:none;border:none;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.mob-a{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--white);padding:13px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s}
+.mob-a:hover,.mob-a.sale{color:var(--gold)}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
+@media(max-width:1080px){
+  .pdp-hero{grid-template-columns:1fr}
+  .gal{position:relative;top:0;height:80vw;max-height:560px;grid-template-columns:56px 1fr}
+  .info{border-left:none;border-top:1px solid var(--bdr);overflow-y:visible}
+  .info-top,.info-body{padding-left:20px;padding-right:20px}
+  .info-body{padding-bottom:110px}
+  .fg{grid-template-columns:1fr}
+  .rv-g{grid-template-columns:1fr}
+  .svg{grid-template-columns:repeat(3,1fr)}
+  .dg{grid-template-columns:repeat(2,1fr)}
+  .tw{grid-template-columns:1fr}
+  .hd-nav{display:none}
+  .burger{display:flex}
+  .satc{display:flex}
+  .try-f{bottom:74px}
+  .pxl-panel{height:70vh}
+  .mini-ugc{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:600px){
+  .trust-badges,.mini-ugc{grid-template-columns:repeat(2,1fr)}
+  .mini-ugc .mu-item:nth-child(n+3){display:none}
+  .svg{grid-template-columns:repeat(2,1fr)}
+  .dg{grid-template-columns:1fr}
+  .rv-sum{flex-direction:column}
+  .ui{width:155px;height:198px}
+  .mbox{padding:20px 16px}
+  .mf2{grid-template-columns:1fr}
+  .pxl-panel{height:58vh}
+  .ph{font-size:clamp(26px,7vw,38px)}
+  .fi{height:70vw}
+  .gal-thumbs{display:none}
+  .gal{grid-template-columns:1fr}
+}
+@media(min-width:1081px){
+  .satc{display:none!important}
+  .try-f{bottom:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- OFFER BAR -->
+<div class="ob">
+  <div class="ob-track">
+    <span>Shop Rs.6,200 and get 5% OFF at checkout</span>
+    <span>Shop Rs.6,900 and get 10% OFF at checkout</span>
+    <span>Shop Rs.9,000 and get 15% OFF at checkout</span>
+    <span>Free Shipping on orders above Rs.1,499</span>
+    <span>1-Year Warranty on every purchase</span>
+    <span>7-Day Easy Returns</span>
+    <span>Shop Rs.6,200 and get 5% OFF at checkout</span>
+    <span>Shop Rs.6,900 and get 10% OFF at checkout</span>
+    <span>Shop Rs.9,000 and get 15% OFF at checkout</span>
+    <span>Free Shipping on orders above Rs.1,499</span>
+    <span>1-Year Warranty on every purchase</span>
+    <span>7-Day Easy Returns</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="hd">
+    <a href="https://isharya.com" class="hd-logo">
+      <img src="https://isharya.com/cdn/shop/files/website_logo_d4953264-94ad-4fb3-84a9-f52aa82716a3.jpg?v=1696314359&width=440" alt="iSharya">
+    </a>
+    <nav><ul class="hd-nav">
+      <li><a href="https://isharya.com/collections/isharya-sale" class="sale">Sale</a></li>
+      <li><a href="https://isharya.com/collections/earrings">Earrings</a></li>
+      <li><a href="https://isharya.com/collections/necklaces">Necklaces</a></li>
+      <li><a href="https://isharya.com/collections/rings">Rings</a></li>
+      <li><a href="https://isharya.com/collections/bestsellers">Bestsellers</a></li>
+      <li><a href="https://isharya.com/pages/isharya-bespoke">Gifting</a></li>
+    </ul></nav>
+    <div class="hd-r">
+      <a href="https://isharya.com/search">Search</a>
+      <a href="https://isharya.com/account">Account</a>
+      <a href="https://isharya.com/cart">Cart<span class="cart-badge" id="cartCount">0</span></a>
+      <button class="burger" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- PDP HERO -->
+<div class="pdp-hero">
+
+  <!-- GALLERY -->
+  <div class="gal">
+    <div class="gal-thumbs">
+      <div class="gthumb on" onclick="setSlide(0)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(1)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(2)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(3)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(4)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=200" alt=""></div>
+    </div>
+    <div class="gal-stage">
+      <div class="gslide on"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080" alt="Tennis Girlie Square Front Back Earrings by iSharya"></div>
+      <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1080" alt="Detail view"></div>
+      <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1080" alt="Worn shot"></div>
+      <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=1080" alt="Side angle"></div>
+      <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=1080" alt="Flat lay"></div>
+      <div class="g-badge">Bestseller</div>
+      <div class="g-acts">
+        <button class="gact" onclick="openLb(currentSlide)">Zoom</button>
+        <button class="gact" id="saveBtn" data-saved="false" onclick="toggleSave(this)">Save</button>
+        <button class="gact" onclick="shareProduct()">Share</button>
+      </div>
+      <div class="g-pills">
+        <button class="gpill">Catalogue</button>
+        <button class="gpill">Gift Idea</button>
+        <button class="gpill" onclick="scrollToTryon()">Try On</button>
+        <button class="gpill" onclick="shareProduct()">Share</button>
+      </div>
+      <div class="g-ct" id="gct">1 / 5</div>
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="info">
+    <div class="info-top">
+      <div class="bc">
+        <a href="https://isharya.com">Home</a><span class="bc-d">/</span>
+        <a href="https://isharya.com/collections/earrings">Earrings</a><span class="bc-d">/</span>
+        <span>Tennis Girlie</span>
+      </div>
+      <div class="info-coll">Tennis Collection</div>
+      <h1 class="info-name">Tennis Girlie Square<br>Front Back Earrings</h1>
+      <div class="info-sku">E2627-65-710</div>
+      <div class="rat-row">
+        <span class="rat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="rat-txt">4.8 / 5 &nbsp;&#183;&nbsp; <a href="#reviews">124 Reviews</a></span>
+      </div>
+      <div class="chips">
+        <span class="chip">Tennis Inspired</span>
+        <span class="chip">Front-Back</span>
+        <span class="chip">Crystal Zirconia</span>
+        <span class="chip">18K Gold Plated</span>
+        <span class="chip">Gift Idea</span>
+      </div>
+    </div>
+
+    <div class="info-body">
+
+      <!-- CERT -->
+      <div class="irow">
+        <div class="itag">CERT</div>
+        <div class="ib">
+          <div class="il">Certified materials</div>
+          <p class="cert-p">18k gold plated, hypoallergenic brass. Nickel and lead-free, meeting current international safety regulations.</p>
+          <div class="trust-badges">
+            <div><img src="https://cdn.shopify.com/s/files/1/0640/5167/5359/files/TrustBadges_IsharyaPDP_1.png?v=1770119495" alt=""></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0640/5167/5359/files/TrustBadges_IsharyaPDP_3.png?v=1770119495" alt=""></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0640/5167/5359/files/TrustBadges_IsharyaPDP_8.png?v=1770119495" alt=""></div>
+            <div><img src="https://cdn.shopify.com/s/files/1/0640/5167/5359/files/TrustBadges_IsharyaPDP_7.png?v=1770119494" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REAL UGC -->
+      <div class="irow">
+        <div class="itag">REAL<br>UGC</div>
+        <div class="ib">
+          <div class="il">Seen on iSharya customers</div>
+          <div class="mini-ugc">
+            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Aditi, Delhi</div></div>
+            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Sanya, Mumbai</div></div>
+            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Rhea, BLR</div></div>
+            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Priya, Chennai</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIGNALS -->
+      <div class="irow">
+        <div class="itag">SIGNALS</div>
+        <div class="ib">
+          <div class="il">What buyers notice</div>
+          <div class="sig-list">
+            <div class="sig-row"><span class="sig-n">01</span><span class="sig-l">Looks delicate on the ear</span><span class="sig-p">93%</span></div>
+            <div class="sig-row"><span class="sig-n">02</span><span class="sig-l">Easy to gift as-is</span><span class="sig-p">89%</span></div>
+            <div class="sig-row"><span class="sig-n">03</span><span class="sig-l">Would repurchase</span><span class="sig-p">96%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICE + CTA -->
+      <div class="irow">
+        <div class="itag">PRICE</div>
+        <div class="ib">
+          <div style="margin-bottom:4px">
+            <span class="p-num">Rs.3,999</span>
+            <span class="p-note">MRP &#183; Inclusive of all taxes</span>
+          </div>
+          <div class="p-emi">EMI from Rs.333 per month &#183; <a href="#price-breakup">View price breakup</a></div>
+          <div class="qty-r">
+            <span class="qty-l">Qty</span>
+            <div class="qty-w">
+              <button class="qb" onclick="changeQty(-1)">&#8722;</button>
+              <input type="text" class="qv" id="qtyVal" value="1" readonly>
+              <button class="qb" onclick="changeQty(1)">+</button>
+            </div>
+          </div>
+          <div class="cta-s">
+            <button class="btn-g" onclick="buyNow()">Buy Now</button>
+            <button class="btn-o" id="mainAtcBtn" onclick="addToCart()">Add to Cart</button>
+            <a href="https://isharya.com/pages/ishayra-store" class="btn-t">Visit Store and Try On In-Person</a>
+          </div>
+          <div class="pay-r">
+            <span class="pay-l">Pay via</span>
+            <span class="pbg">UPI</span><span class="pbg">Credit Card</span>
+            <span class="pbg">Net Banking</span><span class="pbg">COD</span><span class="pbg">EMI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPEC -->
+      <div class="irow">
+        <div class="itag">SPEC</div>
+        <div class="ib">
+          <div class="il" style="display:flex;justify-content:space-between;align-items:center">
+            <span>Earring Dimensions</span>
+            <a href="#" onclick="showCare(event);return false;" style="color:var(--gold);font-size:11px">Care Guide</a>
+          </div>
+          <div class="spec-row">
+            <div class="sc"><div class="sc-v">30mm</div><div class="sc-l">Height</div></div>
+            <div class="sc"><div class="sc-v">24mm</div><div class="sc-l">Width</div></div>
+            <div class="sc"><div class="sc-v">4.2g</div><div class="sc-l">Weight</div></div>
+            <div class="sc"><div class="sc-v">Pair</div><div class="sc-l">Includes</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFER -->
+      <div class="irow">
+        <div class="itag">OFFER</div>
+        <div class="ib">
+          <div class="oc">
+            <div><div class="oc-code">FIRST10</div><div class="oc-desc">10% off on your first order. No minimum.</div></div>
+            <button class="copy-b" onclick="copyCode('FIRST10',this)">Copy</button>
+          </div>
+          <div class="oc">
+            <div><div class="oc-code">INSIDER15</div><div class="oc-desc">15% off for iSharya Insider members.</div></div>
+            <button class="copy-b" onclick="copyCode('INSIDER15',this)">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECK -->
+      <div class="irow">
+        <div class="itag">CHECK</div>
+        <div class="ib">
+          <div class="il">Check Delivery</div>
+          <div class="pin-r">
+            <input type="text" class="pin-i" id="pinInput" placeholder="Enter 6-digit PIN code" maxlength="6" inputmode="numeric">
+            <button class="pin-b" onclick="checkPin()">Check</button>
+          </div>
+          <div class="pin-re" id="pinResult"></div>
+        </div>
+      </div>
+
+      <!-- GIFT -->
+      <div class="irow">
+        <div class="itag">GIFT</div>
+        <div class="ib">
+          <div class="gt-r" onclick="toggleGift()">
+            <span class="gt-l">Send as a gift</span>
+            <label class="sw" onclick="event.stopPropagation()">
+              <input type="checkbox" id="giftChk" onchange="toggleGiftFields()">
+              <span class="sw-t"></span>
+            </label>
+          </div>
+          <div class="gf" id="giftFields">
+            <input class="gi" type="text" placeholder="Recipient name">
+            <input class="gi" type="text" placeholder="Occasion">
+            <textarea class="gi" placeholder="Personal message (optional)"></textarea>
+            <div class="gwr"><input type="checkbox" id="gwchk"><label for="gwchk">Add premium gift wrapping (Rs.99)</label></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PARALLAX -->
+<section class="reveal" style="margin-top:var(--sp)">
+  <div class="pxl-panel">
+    <div class="pxl-bg" data-parallax="0.35" style="background-image:url('https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1600')"></div>
+    <div class="ov-l"></div>
+    <div class="pxl-ct">
+      <div class="pxt">
+        <div class="pe">The Stone</div>
+        <div class="ph">Crystal Zirconia,<br>precision-set</div>
+        <p class="pd">Every stone placed in a square geometric frame, chosen for its refractive clarity and cut to catch light at every angle. Bold without competing with the wearer.</p>
+      </div>
+    </div>
+  </div>
+  <hr class="pxl-hr">
+  <div class="pxl-panel">
+    <div class="pxl-bg" data-parallax="0.35" style="background-image:url('https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1600')"></div>
+    <div class="ov-r"></div>
+    <div class="pxl-ct">
+      <div class="pxt-r">
+        <div class="pe">The Finish</div>
+        <div class="ph">0.3 Micron 18k<br>Gold with E-Coat</div>
+        <p class="pd">An E-coat seals the gold layer against moisture and daily contact. Hypoallergenic brass, nickel and lead-free, certified to international safety standards.</p>
+      </div>
+    </div>
+  </div>
+  <hr class="pxl-hr">
+  <div class="pxl-panel">
+    <div class="pxl-bg" data-parallax="0.35" style="background-image:url('https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1600')"></div>
+    <div class="ov-c"></div>
+    <div class="pxl-ct">
+      <div class="pxt-c">
+        <div class="pe">The Silhouette</div>
+        <div class="ph">Front-back. Both angles.<br>One earring.</div>
+        <p class="pd">Two planes of sparkle off a single push-back closure. At 4.2g per pair, comfortable across 8-hour days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- COMMUNITY -->
+  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+      <div>
+        <div class="eyebrow" style="margin-bottom:7px">Styled by the community</div>
+        <h2 class="sec-h" style="font-size:clamp(22px,2.8vw,34px)">How people wear it</h2>
+      </div>
+      <a href="https://isharya.com/collections/earrings" style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)">View all</a>
+    </div>
+    <div class="ugc-s" id="ugcStrip">
+      <div class="ui"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=400" alt=""><div class="uov"><div class="ucap"><div class="un">Aditi, Delhi</div><div class="uno">Daily wear</div></div></div></div>
+      <div class="ui"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=400" alt=""><div class="uov"><div class="ucap"><div class="un">Sanya, Mumbai</div><div class="uno">Office chic</div></div></div></div>
+      <div class="ui"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=400" alt=""><div class="uov"><div class="ucap"><div class="un">Rhea, Bengaluru</div><div class="uno">Evening glam</div></div></div></div>
+      <div class="ui"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=400" alt=""><div class="uov"><div class="ucap"><div class="un">Nisha, Pune</div><div class="uno">Stacked look</div></div></div></div>
+      <div class="ui"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=400" alt=""><div class="uov"><div class="ucap"><div class="un">Priya, Chennai</div><div class="uno">Weekend casual</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal">
+    <div style="margin-bottom:36px">
+      <div class="eyebrow" style="margin-bottom:9px">The Craft</div>
+      <h2 class="sec-h">Built for those who wear it their way</h2>
+    </div>
+    <div class="fg">
+      <div class="fc">
+        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=800" alt="Stone"></div>
+        <div class="ft"><div class="fte">Stone</div><div class="fth">Crystal Zirconia, precision-set</div><p class="ftd">Square-cut stones in a geometric frame, chosen for refractive clarity. Amplifies light at every angle without overwhelming the earring's proportions.</p></div>
+      </div>
+      <div class="fc">
+        <div class="ft" style="padding-top:44px"><div class="fte">Finish</div><div class="fth">0.3 Micron 18k Gold and E-Coat seal</div><p class="ftd">E-coat locks the gold layer against moisture, sweat and daily contact. Hypoallergenic brass, nickel and lead-free, certified to current international regulations.</p></div>
+        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=800" alt="Finish"></div>
+      </div>
+      <div class="fc">
+        <div class="ft" style="padding-top:44px"><div class="fte">Wearability</div><div class="fth">Front-back silhouette. Effortless, all day.</div><p class="ftd">Two angles of sparkle off a single push-back closure. At 4.2g per pair, comfortable across 8-hour days. Works from skater dresses to tailored jumpsuits.</p></div>
+        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=800" alt="Wearability"></div>
+      </div>
+      <div class="fc">
+        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=800" alt="Occasion"></div>
+        <div class="ft"><div class="fte">Occasion</div><div class="fth">Tennis-punk energy. Every occasion.</div><p class="ftd">Holds its own at a wedding mehendi, a board meeting or a late-night show. No occasion required to wear something this right.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRY ON -->
+  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal" id="tryon-section">
+    <div class="tw">
+      <div>
+        <div class="eyebrow" style="margin-bottom:9px">See It On You</div>
+        <h2 class="sec-h" style="margin-bottom:12px">Try before you decide</h2>
+        <p class="sec-s" style="margin-bottom:24px">Upload a photo and preview how the Tennis Girlie earrings look on you. No app needed.</p>
+        <div class="tz" onclick="document.getElementById('tryonFile').click()">
+          <div class="tze">Upload your photo</div>
+          <div class="tzh">Place earring on your look</div>
+          <div class="tzn">JPG or PNG &#183; Max 5MB &#183; or use camera</div>
+          <input type="file" id="tryonFile" accept="image/*" style="display:none" onchange="handleTryon(event)">
+        </div>
+        <p class="tzd">Preview is approximate. Photos are not stored or shared.</p>
+      </div>
+      <div>
+        <div id="tryonPh" style="border:1px solid var(--bdr);overflow:hidden;height:420px">
+          <img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=800" alt="" style="width:100%;height:100%;object-fit:cover;opacity:.45">
+        </div>
+        <div id="tryonRes" style="display:none;position:relative;border:1px solid var(--bdr)">
+          <img id="tryonUsr" src="" alt="" style="width:100%;display:block">
+          <div style="position:absolute;top:48%;left:40%;transform:translate(-50%,-50%);pointer-events:none">
+            <img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=120" alt="" style="width:54px;opacity:.9;filter:drop-shadow(0 3px 12px rgba(0,0,0,.75))">
+          </div>
+          <div style="font-size:11px;color:var(--dim);text-align:center;padding:8px;background:var(--bg-s)">Approximate preview. Scale is illustrative.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE BREAKUP -->
+  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal" id="price-breakup">
+    <div style="max-width:560px">
+      <div class="eyebrow" style="margin-bottom:9px">Transparency First</div>
+      <h2 class="sec-h" style="margin-bottom:30px">Price Breakup</h2>
+      <table class="bpt">
+        <tbody>
+          <tr><td>Brass metal base</td><td>Rs.280</td></tr>
+          <tr><td>18k Gold Plating (0.3 Micron)</td><td>Rs.220</td></tr>
+          <tr><td>Crystal Zirconia stones</td><td>Rs.1,800</td></tr>
+          <tr><td>Making charges and craftsmanship</td><td>Rs.1,100</td></tr>
+          <tr><td>E-Coat finishing and quality control</td><td>Rs.200</td></tr>
+          <tr><td>GST (3%)</td><td>Rs.399</td></tr>
+        </tbody>
+        <tfoot><tr class="bpt-tot"><td>Total MRP</td><td>Rs.3,999</td></tr></tfoot>
+      </table>
+      <p style="font-size:11px;color:var(--dim);margin-top:14px;line-height:1.6">Prices are indicative. Final billing reflects selected quantity and applicable taxes.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS -->
+  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal">
+    <div class="eyebrow" style="margin-bottom:9px">Specifications</div>
+    <h2 class="sec-h" style="margin-bottom:30px">Product Details</h2>
+    <div class="dg">
+      <div class="dc"><div class="dl">SKU / Design Code</div><div class="dv">E2627-65-710</div></div>
+      <div class="dc"><div class="dl">Metal</div><div class="dv">Brass, 0.3 Micron 18k Gold Plated</div></div>
+      <div class="dc"><div class="dl">Stone</div><div class="dv">Crystal Zirconia (CZ), Square Cut</div></div>
+      <div class="dc"><div class="dl">Weight</div><div class="dv">4.2 g per pair</div></div>
+      <div class="dc"><div class="dl">Dimensions</div><div class="dv">30 x 24 mm</div></div>
+      <div class="dc"><div class="dl">Closure</div><div class="dv">Push-back (front-back style)</div></div>
+      <div class="dc"><div class="dl">Surface Coat</div><div class="dv">E-Coat sealed, moisture resistant</div></div>
+      <div class="dc"><div class="dl">Skin Safety</div><div class="dv">Hypoallergenic, Nickel and Lead-free</div></div>
+      <div class="dc"><div class="dl">Warranty</div><div class="dv">1 Year on plating and manufacturing defects</div></div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal" id="reviews">
+    <div class="eyebrow" style="margin-bottom:9px">Verified Reviews</div>
+    <h2 class="sec-h" style="margin-bottom:34px">What people are saying</h2>
+    <div class="rv-sum">
+      <div style="text-align:center;flex-shrink:0">
+        <div class="rn">4.8</div>
+        <div class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="rc">124 reviews</div>
+      </div>
+      <div class="rbs">
+        <div class="rb-r"><span class="rb-l">5 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:82%"></div></div><span class="rb-p">82%</span></div>
+        <div class="rb-r"><span class="rb-l">4 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:11%"></div></div><span class="rb-p">11%</span></div>
+        <div class="rb-r"><span class="rb-l">3 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:5%"></div></div><span class="rb-p">5%</span></div>
+        <div class="rb-r"><span class="rb-l">2 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:1%"></div></div><span class="rb-p">1%</span></div>
+        <div class="rb-r"><span class="rb-l">1 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:1%"></div></div><span class="rb-p">1%</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:9px;flex-shrink:0">
+        <button class="btn-o" style="width:auto;padding:11px 22px;font-size:11px">Write a Review</button>
+        <div style="font-size:11px;color:var(--dim)">Verified purchasers only.</div>
+      </div>
+    </div>
+    <div class="rv-g">
+      <div class="rcd"><div class="rcd-hd"><span class="rcd-n">Priya M.</span><span class="rcd-d">May 2025</span></div><div class="rcd-s">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rcd-h">My most-complimented earring</div><div class="rcd-b">Wore these to a friend's wedding mehendi and got asked about them at least five times. The front-back design is clever, double the sparkle without extra weight. Packaging was beautiful.</div><div class="rcd-v">Verified Purchase</div></div>
+      <div class="rcd"><div class="rcd-hd"><span class="rcd-n">Sanya K.</span><span class="rcd-d">April 2025</span></div><div class="rcd-s">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rcd-h">Perfect everyday piece</div><div class="rcd-b">Was unsure about the size, 30mm felt big on paper. They sit perfectly in person. Wore them every day for a month and there is zero tarnish. The gold tone is warm, not tacky-yellow.</div><div class="rcd-v">Verified Purchase</div></div>
+      <div class="rcd"><div class="rcd-hd"><span class="rcd-n">Rishika S.</span><span class="rcd-d">March 2025</span></div><div class="rcd-s">&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="rcd-h">Gifted this, she loved it</div><div class="rcd-b">Birthday gift for my sister. The box is super presentable, no extra wrapping needed. She said it is her new favourite. Four stars because delivery ran a day longer than promised.</div><div class="rcd-v">Verified Purchase</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="svc reveal">
+    <div class="svg">
+      <div class="svc-c"><span class="svc-n">7</span><div class="svc-l">Day Returns</div><div class="svc-s">Hassle-free return within 7 days of delivery.</div></div>
+      <div class="svc-c"><span class="svc-n">1</span><div class="svc-l">Year Warranty</div><div class="svc-s">Full warranty on plating and manufacturing defects.</div></div>
+      <div class="svc-c"><span class="svc-n cg">Free</span><div class="svc-l">Shipping</div><div class="svc-s">Free delivery on all orders above Rs.1,499.</div></div>
+      <div class="svc-c"><span class="svc-n cg">Box</span><div class="svc-l">Gift Packaging</div><div class="svc-s">Every piece ships in a premium iSharya gift box.</div></div>
+      <div class="svc-c"><span class="svc-n cg">Safe</span><div class="svc-l">Hypoallergenic</div><div class="svc-s">Nickel and lead-free. Internationally certified.</div></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- STICKY ATC -->
+<div class="satc" id="satcEl">
+  <div class="si"><div class="si-n">Tennis Girlie Square Front Back</div><div class="si-p">Rs.3,999</div></div>
+  <button class="sb" onclick="addToCart()">Add to Cart</button>
+</div>
+
+<button class="try-f" onclick="openTryHome()">Try at Home</button>
+
+<!-- TRY AT HOME MODAL -->
+<div class="mbg" id="tryHomeModal">
+  <div class="mbox">
+    <button class="mx" onclick="closeTryHome()">Close</button>
+    <div class="mt">Book a Home Try-On</div>
+    <div class="ms">We will send the piece to you. Try it at home, keep it if you love it. Our stylist assists over WhatsApp.</div>
+    <div class="mf"><label>Your Name</label><input type="text" placeholder="e.g. Priya Sharma"></div>
+    <div class="mf"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+    <div class="mf2">
+      <div class="mf"><label>Date</label><input type="date"></div>
+      <div class="mf"><label>Time Slot</label><select><option value="">Select</option><option>10:00 to 12:00</option><option>12:00 to 14:00</option><option>14:00 to 16:00</option><option>16:00 to 18:00</option></select></div>
+    </div>
+    <div class="mf"><label>PIN Code</label><input type="text" placeholder="6-digit PIN code" maxlength="6" inputmode="numeric"></div>
+    <div class="mf"><label>Address</label><input type="text" placeholder="Flat, Street, Area, City"></div>
+    <div class="mfc"><input type="checkbox"><label>Reserve with Rs.99 advance (refundable if not purchased)</label></div>
+    <button class="btn-g" onclick="bookVisit()">Confirm Visit Booking</button>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lbbg" id="lbBg" onclick="closeLb()">
+  <div class="lb" onclick="event.stopPropagation()">
+    <button class="lbx" onclick="closeLb()">Close</button>
+    <img id="lbImg" src="" alt="">
+    <div class="lb-nav">
+      <button class="lbn" onclick="lbNav(-1)">Prev</button>
+      <button class="lbn" onclick="lbNav(1)">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mob" id="mobNav">
+  <div class="mob-hd">
+    <img src="https://isharya.com/cdn/shop/files/website_logo_d4953264-94ad-4fb3-84a9-f52aa82716a3.jpg?v=1696314359&width=260" alt="iSharya">
+    <button class="mob-x" onclick="closeMobNav()">Close</button>
+  </div>
+  <a href="https://isharya.com/collections/isharya-sale" class="mob-a sale">Sale</a>
+  <a href="https://isharya.com/collections/earrings" class="mob-a">Earrings</a>
+  <a href="https://isharya.com/collections/necklaces" class="mob-a">Necklaces</a>
+  <a href="https://isharya.com/collections/rings" class="mob-a">Rings</a>
+  <a href="https://isharya.com/collections/bestsellers" class="mob-a">Bestsellers</a>
+  <a href="https://isharya.com/pages/isharya-bespoke" class="mob-a">Gifting</a>
+  <a href="https://isharya.com/pages/ishayra-store" class="mob-a">Store Locator</a>
+</div>
+
+<script>
+let cs=0;
+const slides=document.querySelectorAll('.gslide'),thumbs=document.querySelectorAll('.gthumb'),ct=document.getElementById('gct');
+const srcs=['https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=1080'];
+function setSlide(i){slides[cs].classList.remove('on');thumbs[cs].classList.remove('on');cs=(i+slides.length)%slides.length;slides[cs].classList.add('on');thumbs[cs].classList.add('on');ct.textContent=(cs+1)+' / '+slides.length;}
+document.addEventListener('keydown',e=>{if(document.getElementById('lbBg').classList.contains('open'))return;if(e.key==='ArrowLeft')setSlide(cs-1);if(e.key==='ArrowRight')setSlide(cs+1);});
+const stg=document.querySelector('.gal-stage');let tx=0;
+stg.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+stg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>36)setSlide(dx<0?cs+1:cs-1);});
+function openLb(i){document.getElementById('lbImg').src=srcs[i];document.getElementById('lbBg').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lbBg').classList.remove('open');document.body.style.overflow='';}
+function lbNav(d){setSlide(cs+d);document.getElementById('lbImg').src=srcs[cs];}
+function changeQty(d){const el=document.getElementById('qtyVal');const v=parseInt(el.value);if(v+d<1)return;el.value=v+d;}
+function copyCode(code,btn){navigator.clipboard.writeText(code).catch(()=>{});const o=btn.textContent;btn.textContent='Copied';btn.style.cssText='background:var(--gold);color:#111;border-color:var(--gold)';setTimeout(()=>{btn.textContent=o;btn.style.cssText='';},2000);}
+function checkPin(){const v=document.getElementById('pinInput').value.trim();const r=document.getElementById('pinResult');if(!/^\d{6}$/.test(v)){r.textContent='Please enter a valid 6-digit PIN code.';r.className='pin-re fail';return;}r.textContent='Checking...';r.className='pin-re';setTimeout(()=>{r.textContent='Delivery available. Estimated 2 to 4 business days. Free shipping applied.';r.className='pin-re ok';},700);}
+document.getElementById('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')checkPin();});
+function toggleGift(){const c=document.getElementById('giftChk');c.checked=!c.checked;toggleGiftFields();}
+function toggleGiftFields(){document.getElementById('giftFields').classList.toggle('open',document.getElementById('giftChk').checked);}
+let inCart=0;
+function addToCart(){inCart++;document.getElementById('cartCount').textContent=inCart;const btn=document.getElementById('mainAtcBtn');const o=btn.textContent;btn.textContent='Added to Cart';btn.style.borderColor='var(--gold)';btn.style.color='var(--gold)';setTimeout(()=>{btn.textContent=o;btn.style.borderColor='';btn.style.color='';},2000);}
+function buyNow(){window.location.href='https://isharya.com/cart';}
+function shareProduct(){if(navigator.share){navigator.share({title:'Tennis Girlie Square Front Back Earrings | iSharya',url:'https://isharya.com/products/tennis-girlie-square-front-back-earrings'});}else{navigator.clipboard.writeText('https://isharya.com/products/tennis-girlie-square-front-back-earrings');alert('Link copied to clipboard.');}}
+function toggleSave(btn){const s=btn.dataset.saved==='true';btn.dataset.saved=(!s).toString();btn.textContent=s?'Save':'Saved';btn.style.background=s?'':'var(--gold)';btn.style.color=s?'':'#111';}
+function scrollToTryon(){document.getElementById('tryon-section').scrollIntoView({behavior:'smooth'});}
+function showCare(e){e.preventDefault();alert('iSharya Care Guide\n\nClean with a soft dry cloth after each wear.\nStore in the iSharya box, separate from other pieces.\nAvoid contact with perfume, chemicals, and water.\nRemove before showering, swimming, or exercising.\n\n1-Year Warranty on plating and manufacturing defects.');}
+function openTryHome(){document.getElementById('tryHomeModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeTryHome(){document.getElementById('tryHomeModal').classList.remove('open');document.body.style.overflow='';}
+function bookVisit(){closeTryHome();setTimeout(()=>alert('Visit booked. Our team will confirm within 24 hours.'),150);}
+function handleTryon(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{document.getElementById('tryonUsr').src=ev.target.result;document.getElementById('tryonPh').style.display='none';document.getElementById('tryonRes').style.display='block';};r.readAsDataURL(f);}
+const satcEl=document.getElementById('satcEl');
+new IntersectionObserver(entries=>{if(window.innerWidth<=1080)entries.forEach(e=>satcEl.classList.toggle('show',!e.isIntersecting));},{threshold:0}).observe(document.getElementById('mainAtcBtn'));
+new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}}); },{threshold:0.06}).observe(document.body);
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});},{threshold:0.06}).observe(el));
+const pxls=document.querySelectorAll('[data-parallax]');
+function applyPx(){pxls.forEach(el=>{const p=el.closest('.pxl-panel');if(!p)return;const r=p.getBoundingClientRect();el.style.transform='translateY('+(r.top*(parseFloat(el.dataset.parallax)||.35))+'px)';});}
+window.addEventListener('scroll',applyPx,{passive:true});applyPx();
+document.getElementById('menuBtn').addEventListener('click',()=>{document.getElementById('mobNav').classList.add('open');document.body.style.overflow='hidden';});
+function closeMobNav(){document.getElementById('mobNav').classList.remove('open');document.body.style.overflow='';}
+const strip=document.getElementById('ugcStrip');let dn=false,sx=0,sl=0;
+strip.addEventListener('mousedown',e=>{dn=true;strip.style.cursor='grabbing';sx=e.pageX-strip.offsetLeft;sl=strip.scrollLeft;});
+strip.addEventListener('mouseleave',()=>{dn=false;strip.style.cursor='grab';});
+strip.addEventListener('mouseup',()=>{dn=false;strip.style.cursor='grab';});
+strip.addEventListener('mousemove',e=>{if(!dn)return;e.preventDefault();strip.scrollLeft=sl-(e.pageX-strip.offsetLeft-sx);});
+</script>
+</body>
+</html>
