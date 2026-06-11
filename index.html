@@ -220,7 +220,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .pxl-bg{position:absolute;inset:-26%;background-size:cover;background-position:center;will-change:transform}
 .ov-l{position:absolute;inset:0;background:linear-gradient(to right,rgba(11,11,11,.92) 0%,rgba(11,11,11,.4) 55%,transparent 100%)}
 .ov-r{position:absolute;inset:0;background:linear-gradient(to left,rgba(11,11,11,.92) 0%,rgba(11,11,11,.4) 55%,transparent 100%)}
-.ov-c{position:absolute;inset:0;background:rgba(11,11,11,.6)}
+.ov-c{position:absolute;inset:0;background:rgba(11,11,11,.55)}
 .pxl-ct{position:relative;z-index:2;max-width:var(--max);width:100%;margin:0 auto;padding:0 var(--px)}
 .pxt{max-width:460px}
 .pxt-r{max-width:460px;margin-left:auto;text-align:right}
@@ -233,9 +233,11 @@ textarea.gi{resize:vertical;min-height:56px}
 .pxl-hr{border:none;border-top:1px solid var(--bdr)}
 
 /* COMMUNITY */
-.ugc-s{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;cursor:grab;padding-bottom:2px}
+.ugc-s{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;cursor:grab;padding-bottom:2px;}
 .ugc-s::-webkit-scrollbar{display:none}
 .ui{flex:0 0 auto;width:200px;height:248px;overflow:hidden;position:relative}
+.ui:first-child{margin-left:auto}
+.ui:last-child{margin-right:auto}
 .ui img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .ui:hover img{transform:scale(1.06)}
 .uov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%);opacity:0;transition:opacity .3s}
@@ -245,18 +247,18 @@ textarea.gi{resize:vertical;min-height:56px}
 .uno{font-size:10px;color:rgba(255,255,255,.55);margin-top:2px}
 
 /* FEATURES */
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr)}
-.fc{background:var(--bg);overflow:hidden}
-.fi{overflow:hidden}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr);max-width:1080px;margin:0 auto}
+.fc{background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
+.fi{overflow:hidden;height:340px;flex-shrink:0}
 .fi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
 .fc:hover .fi img{transform:scale(1.04)}
-.ft{padding:28px 32px}
+.ft{padding:28px 30px 34px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center}
 .fte{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .fth{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2}
-.ftd{font-size:13px;color:var(--sub);line-height:1.7}
+.ftd{font-size:13px;color:var(--sub);line-height:1.7;max-width:380px;margin:0 auto}
 
 /* TRYON */
-.tw{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.tw{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
 .tz{border:1px solid var(--bdr-l);padding:0 30px;text-align:center;cursor:pointer;transition:border-color .2s;height:420px;display:flex;flex-direction:column;justify-content:center}
 .tz:hover{border-color:var(--gold-lo)}
 .tze{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
@@ -273,7 +275,7 @@ textarea.gi{resize:vertical;min-height:56px}
 
 /* DETAILS */
 .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);max-width:900px;margin:0 auto}
-.dc{background:var(--bg);padding:17px 20px}
+.dc{background:var(--bg);padding:18px 20px;text-align:center}
 .dl{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
 .dv{font-size:14px;color:var(--text)}
 
@@ -288,7 +290,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .rb-t{flex:1;height:2px;background:var(--bdr-l)}
 .rb-f{height:100%;background:var(--gold);transition:width 1.2s ease}
 .rb-p{font-size:10px;color:var(--dim);width:30px;flex-shrink:0}
-.rv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);margin-bottom:26px}
+.rv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);margin-bottom:26px;max-width:1080px;margin-left:auto;margin-right:auto}
 .rcd{background:var(--bg-s);padding:24px}
 .rcd-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
 .rcd-n{font-size:13px;font-weight:500;color:var(--white)}
@@ -300,7 +302,7 @@ textarea.gi{resize:vertical;min-height:56px}
 
 /* SERVICE */
 .svc{padding:42px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
-.svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr)}
+.svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr);max-width:1200px;margin:0 auto}
 .svc-c{background:var(--bg);padding:26px 14px;text-align:center;min-width:0}
 .svc-c .svc-l,.svc-c .svc-s{overflow-wrap:break-word}
 .svc-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
@@ -418,9 +420,9 @@ textarea.gi{resize:vertical;min-height:56px}
   .pxt-r h3{font-size:24px}
   .ugc-s .ui{width:150px;height:196px}
   .fc{padding:0}
-  .ft{padding:22px 16px}
+  .ft{padding:20px 16px 26px}
   .fth{font-size:19px}
-  .fi{height:80vw!important;max-height:380px}
+  .fi{height:72vw;max-height:340px}
   .tz{padding:34px 18px}
   .bpt td{font-size:12px;padding:10px 0}
   .dg{grid-template-columns:1fr}
@@ -697,9 +699,9 @@ textarea.gi{resize:vertical;min-height:56px}
 <section class="reveal" style="margin-top:var(--sp)">
   <div class="pxl-panel">
     <div class="pxl-bg" data-parallax="0.35" style="background-image:url('https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1600')"></div>
-    <div class="ov-l"></div>
+    <div class="ov-c"></div>
     <div class="pxl-ct">
-      <div class="pxt">
+      <div class="pxt-c">
         <div class="pe">The Stone</div>
         <div class="ph">Crystal Zirconia,<br>precision-set</div>
         <p class="pd">Every stone placed in a square geometric frame, chosen for its refractive clarity and cut to catch light at every angle. Bold without competing with the wearer.</p>
@@ -709,9 +711,9 @@ textarea.gi{resize:vertical;min-height:56px}
   <hr class="pxl-hr">
   <div class="pxl-panel">
     <div class="pxl-bg" data-parallax="0.35" style="background-image:url('https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1600')"></div>
-    <div class="ov-r"></div>
+    <div class="ov-c"></div>
     <div class="pxl-ct">
-      <div class="pxt-r">
+      <div class="pxt-c">
         <div class="pe">The Finish</div>
         <div class="ph">0.3 Micron 18k<br>Gold with E-Coat</div>
         <p class="pd">An E-coat seals the gold layer against moisture and daily contact. Hypoallergenic brass, nickel and lead-free, certified to international safety standards.</p>
@@ -757,20 +759,20 @@ textarea.gi{resize:vertical;min-height:56px}
     </div>
     <div class="fg">
       <div class="fc">
-        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=800" alt="Stone"></div>
+        <div class="fi"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=800" alt="Stone"></div>
         <div class="ft"><div class="fte">Stone</div><div class="fth">Crystal Zirconia, precision-set</div><p class="ftd">Square-cut stones in a geometric frame, chosen for refractive clarity. Amplifies light at every angle without overwhelming the earring's proportions.</p></div>
       </div>
       <div class="fc">
-        <div class="ft" style="padding-top:44px"><div class="fte">Finish</div><div class="fth">0.3 Micron 18k Gold and E-Coat seal</div><p class="ftd">E-coat locks the gold layer against moisture, sweat and daily contact. Hypoallergenic brass, nickel and lead-free, certified to current international regulations.</p></div>
-        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=800" alt="Finish"></div>
+        <div class="fi"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=800" alt="Finish"></div>
+        <div class="ft"><div class="fte">Finish</div><div class="fth">0.3 Micron 18k Gold, E-Coat seal</div><p class="ftd">E-coat locks the gold layer against moisture, sweat and daily contact. Hypoallergenic brass, nickel and lead-free, certified to current international regulations.</p></div>
       </div>
       <div class="fc">
-        <div class="ft" style="padding-top:44px"><div class="fte">Wearability</div><div class="fth">Front-back silhouette. Effortless, all day.</div><p class="ftd">Two angles of sparkle off a single push-back closure. At 4.2g per pair, comfortable across 8-hour days. Works from skater dresses to tailored jumpsuits.</p></div>
-        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=800" alt="Wearability"></div>
+        <div class="fi"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=800" alt="Wearability"></div>
+        <div class="ft"><div class="fte">Wearability</div><div class="fth">Front-back silhouette, all day</div><p class="ftd">Two angles of sparkle off a single push-back closure. At 4.2g per pair, comfortable across 8-hour days. Works from skater dresses to tailored jumpsuits.</p></div>
       </div>
       <div class="fc">
-        <div class="fi" style="height:420px"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=800" alt="Occasion"></div>
-        <div class="ft"><div class="fte">Occasion</div><div class="fth">Tennis-punk energy. Every occasion.</div><p class="ftd">Holds its own at a wedding mehendi, a board meeting or a late-night show. No occasion required to wear something this right.</p></div>
+        <div class="fi"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=800" alt="Occasion"></div>
+        <div class="ft"><div class="fte">Occasion</div><div class="fth">Tennis-punk energy, anywhere</div><p class="ftd">Holds its own at a wedding mehendi, a board meeting or a late-night show. No occasion required to wear something this right.</p></div>
       </div>
     </div>
   </section>
@@ -790,7 +792,7 @@ textarea.gi{resize:vertical;min-height:56px}
           <div class="tzn">JPG or PNG &#183; Max 5MB &#183; or use camera</div>
           <input type="file" id="tryonFile" accept="image/*" style="display:none" onchange="handleTryon(event)">
         </div>
-        <p class="tzd">Preview is approximate. Photos are not stored or shared.</p>
+        <p class="tzd" style="text-align:center">Preview is approximate. Photos are not stored or shared.</p>
       </div>
       <div>
         <div id="tryonPh" style="border:1px solid var(--bdr);overflow:hidden;height:420px">
@@ -868,7 +870,7 @@ textarea.gi{resize:vertical;min-height:56px}
         <div class="rb-r"><span class="rb-l">1 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:1%"></div></div><span class="rb-p">1%</span></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:9px;flex-shrink:0">
-        <button class="btn-o" style="width:auto;padding:11px 22px;font-size:11px">Write a Review</button>
+        <button class="btn-o" style="width:auto;padding:11px 22px;font-size:11px;margin:0 auto">Write a Review</button>
         <div style="font-size:11px;color:var(--dim)">Verified purchasers only.</div>
       </div>
     </div>
