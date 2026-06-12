@@ -158,7 +158,51 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .sig-l{flex:1;font-size:13px;color:var(--text)}
 .sig-p{font-family:'Archivo',sans-serif;font-size:18px;color:var(--gold);font-weight:500;flex-shrink:0}
 
+.chip-g{border-color:var(--gold-lo);color:var(--gold);background:var(--bg-s)}
+/* BUNDLE */
+.bnd-tiers{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin:0 auto 34px}
+.bnd-t{position:relative;border:1px solid var(--bdr);background:var(--bg-s);padding:22px 20px;text-align:center}
+.bnd-hl{border-color:var(--gold-lo)}
+.bnd-bb{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:8px;letter-spacing:.16em;text-transform:uppercase;padding:4px 12px}
+.bnd-tt{font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
+.bnd-tp{font-family:'Jost',sans-serif;font-weight:500;font-size:16px;color:var(--gold);margin-bottom:6px}
+.bnd-td{font-size:11px;color:var(--muted)}
+.bnd-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1080px;margin:0 auto}
+.bnd-c{border:1px solid var(--bdr);background:var(--bg);text-align:center;padding-bottom:18px;transition:border-color .25s}
+.bnd-c:hover{border-color:var(--gold-lo)}
+.bnd-c img{width:100%;aspect-ratio:1;object-fit:cover;display:block;margin-bottom:14px}
+.bnd-cn{font-size:12px;color:var(--text);letter-spacing:.03em;margin-bottom:4px;padding:0 10px}
+.bnd-cp{font-family:'Jost',sans-serif;font-weight:500;font-size:14px;color:var(--gold);margin-bottom:12px}
+.bnd-add{background:transparent;border:1px solid var(--gold);color:var(--gold);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:8px 22px;cursor:pointer;transition:.2s}
+.bnd-add:hover{background:var(--gold);color:#fff}
+/* FAQ */
+.faq-w{max-width:720px;margin:0 auto}
+.faq{border-bottom:1px solid var(--bdr)}
+.faq:first-child{border-top:1px solid var(--bdr)}
+.faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 2px;font-family:'Jost',sans-serif;font-size:13.5px;color:var(--text);cursor:pointer;text-align:left;letter-spacing:.02em}
+.faq-q span{font-size:18px;color:var(--gold);font-weight:300;transition:transform .25s;flex-shrink:0}
+.faq.open .faq-q span{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:12.5px;color:var(--sub);line-height:1.75}
+.faq.open .faq-a{max-height:200px;padding-bottom:18px}
+/* RECENT PURCHASE TOAST */
+.rp-toast{position:fixed;left:12px;bottom:12px;z-index:80;background:rgba(255,255,255,.7);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);border:1px solid rgba(255,255,255,.65);border-radius:14px;box-shadow:0 8px 26px rgba(38,14,21,.14);padding:10px 16px;font-size:11px;color:var(--sub);max-width:260px;opacity:0;transform:translateY(12px);transition:.4s;pointer-events:none}
+.rp-toast.show{opacity:1;transform:translateY(0)}
+.rp-toast b{color:var(--gold);font-weight:500}
+/* STICKY EXTRAS */
+.satc-trust{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center}
+.satc-row{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%}
+.satc-btns{display:flex;gap:8px;flex-shrink:0}
+.sb-o{background:transparent!important;color:var(--gold)!important;border:1px solid var(--gold)!important}
+.si-was{font-size:11px;color:var(--dim);text-decoration:line-through;font-weight:400}
+/* DELIVERY */
+.dlv-r{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.dlv-b{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);border:1px solid var(--bdr);background:var(--bg-s);padding:5px 10px}
 /* PRICE */
+.p-was{font-family:'Jost',sans-serif;font-size:15px;color:var(--dim);text-decoration:line-through}
+.p-save{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-lo);background:var(--bg-s);padding:4px 9px;border-radius:2px}
+.p-urg{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--sub);letter-spacing:.04em;margin-bottom:8px}
+.urg-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:upulse 1.8s ease-in-out infinite}
+@keyframes upulse{0%,100%{opacity:1}50%{opacity:.35}}
 .p-num{font-family:'Jost',sans-serif;font-weight:500;font-size:36px;font-weight:500;letter-spacing:-.02em;color:var(--white)}
 .p-note{font-size:11px;color:var(--muted);margin-left:6px}
 .p-emi{font-size:12px;color:var(--muted);margin-top:5px}
@@ -293,27 +337,6 @@ textarea.gi{resize:vertical;min-height:56px}
 .dl{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
 .dv{font-size:14px;color:var(--text)}
 
-/* REVIEWS */
-.rv-sum{display:flex;align-items:flex-start;justify-content:center;gap:48px;margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid var(--bdr);flex-wrap:wrap;max-width:860px;margin-left:auto;margin-right:auto}
-.rn{font-family:'Jost',sans-serif;font-weight:400;font-size:64px;font-weight:300;color:var(--gold);line-height:1}
-.rs{color:var(--gold);font-size:15px;letter-spacing:3px;margin:4px 0}
-.rc{font-size:12px;color:var(--muted)}
-.rbs{flex:0 1 340px;min-width:220px}
-.rb-r{display:flex;align-items:center;gap:10px;margin-bottom:9px}
-.rb-l{font-size:11px;color:var(--muted);width:34px;text-align:right;flex-shrink:0}
-.rb-t{flex:1;height:2px;background:var(--bdr-l)}
-.rb-f{height:100%;background:var(--gold);transition:width 1.2s ease}
-.rb-p{font-size:10px;color:var(--dim);width:30px;flex-shrink:0}
-.rv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);margin-bottom:26px;max-width:1080px;margin-left:auto;margin-right:auto}
-.rcd{background:var(--bg-s);padding:24px}
-.rcd-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
-.rcd-n{font-size:13px;font-weight:500;color:var(--white)}
-.rcd-d{font-size:11px;color:var(--dim)}
-.rcd-s{color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:8px}
-.rcd-h{font-family:'Archivo',sans-serif;font-size:16px;color:var(--white);margin-bottom:7px}
-.rcd-b{font-size:12px;color:var(--sub);line-height:1.65}
-.rcd-v{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ok);margin-top:11px}
-
 /* SERVICE */
 .svc{padding:42px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
 .svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr);max-width:1200px;margin:0 auto}
@@ -324,7 +347,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .svc-s{font-size:11px;color:var(--muted);line-height:1.5}
 
 /* STICKY ATC */
-.satc{position:fixed;bottom:12px;left:12px;right:12px;background:rgba(255,255,255,.58);backdrop-filter:blur(22px) saturate(1.7);-webkit-backdrop-filter:blur(22px) saturate(1.7);border:1px solid rgba(255,255,255,.65);border-radius:20px;box-shadow:0 10px 34px rgba(38,14,21,.16);padding:12px 16px;z-index:90;display:none;align-items:center;justify-content:space-between;gap:14px;transform:translateY(130%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.satc{position:fixed;bottom:12px;left:12px;right:12px;background:rgba(255,255,255,.58);backdrop-filter:blur(22px) saturate(1.7);-webkit-backdrop-filter:blur(22px) saturate(1.7);border:1px solid rgba(255,255,255,.65);border-radius:20px;box-shadow:0 10px 34px rgba(38,14,21,.16);padding:12px 16px;z-index:90;display:none;flex-direction:column;gap:8px;transform:translateY(130%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .satc.show{transform:translateY(0)}
 .si{display:flex;flex-direction:column;gap:2px}
 .si-n{font-size:12px;font-weight:500;color:var(--white)}
@@ -382,7 +405,6 @@ textarea.gi{resize:vertical;min-height:56px}
   .gthumb{width:54px;height:58px}
   .info{border-left:none;border-top:1px solid var(--bdr);overflow-y:visible;height:auto;padding:24px 18px 110px}
   .fg{grid-template-columns:1fr}
-  .rv-g{grid-template-columns:1fr}
   .svg{grid-template-columns:repeat(3,1fr)}
   .dg{grid-template-columns:repeat(2,1fr)}
   .tw{grid-template-columns:1fr;gap:26px}
@@ -442,9 +464,6 @@ textarea.gi{resize:vertical;min-height:56px}
   .bpt td{font-size:12px;padding:10px 0}
   .dg{grid-template-columns:1fr}
   .dc{padding:13px 14px}
-  .rv-sum{flex-direction:column;align-items:flex-start;gap:18px}
-  .rn{font-size:50px}
-  .rcd{padding:18px 16px}
   .svg{grid-template-columns:repeat(2,1fr)}
   .svc-c{padding:18px 12px}
   .satc{padding:10px 14px}
@@ -454,6 +473,12 @@ textarea.gi{resize:vertical;min-height:56px}
   .mbox{padding:24px 18px;max-height:88vh}
   .mf2{grid-template-columns:1fr}
   .mf input,.mf select,.mf2 input,.mf2 select{font-size:16px}
+  .bnd-tiers{grid-template-columns:1fr;gap:10px}
+  .bnd-strip{grid-template-columns:repeat(2,1fr);gap:10px}
+  .rp-toast{bottom:124px;left:12px;max-width:220px}
+  .satc-btns .sb{padding:12px 13px;font-size:9px}
+  .satc .si-n{font-size:10.5px;max-width:34vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .satc-trust{font-size:8px}
   .hero-float{padding:18px 14px 14px}
   .hf-title{font-size:17px}
   .tz{height:280px;padding:0 20px}
@@ -558,14 +583,14 @@ textarea.gi{resize:vertical;min-height:56px}
       <div class="info-sku">E2627-65-710</div>
       <div class="rat-row">
         <span class="rat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="rat-txt">4.8 / 5 &nbsp;&#183;&nbsp; <a href="#reviews">124 Reviews</a></span>
+        <span class="rat-txt">4.8 / 5 &nbsp;&#183;&nbsp; 124 Reviews</span>
       </div>
       <div class="chips">
         <span class="chip">Tennis Inspired</span>
         <span class="chip">Front-Back</span>
         <span class="chip">Crystal Zirconia</span>
         <span class="chip">18K Gold Plated</span>
-        <span class="chip">Gift Idea</span>
+        <span class="chip">Gift Idea</span><span class="chip chip-g">Celebrity Favorite</span><span class="chip chip-g">Handcrafted</span>
       </div>
     </div>
 
@@ -575,10 +600,13 @@ textarea.gi{resize:vertical;min-height:56px}
       <div class="irow">
         <div class="itag">PRICE</div>
         <div class="ib">
-          <div style="margin-bottom:4px">
+          <div style="margin-bottom:4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
             <span class="p-num">Rs.3,999</span>
-            <span class="p-note">MRP &#183; Inclusive of all taxes</span>
+            <span class="p-was">Rs.4,999</span>
+            <span class="p-save">You save Rs.1,000 (20%)</span>
           </div>
+          <div class="p-note" style="margin-bottom:6px">MRP &#183; Inclusive of all taxes</div>
+          <div class="p-urg"><span class="urg-dot"></span>Only 7 left &#183; Selling fast in Delhi NCR</div>
           <div class="p-emi">EMI from Rs.333 per month &#183; <a href="#price-breakup">View price breakup</a></div>
           <div class="qty-r">
             <span class="qty-l">Qty</span>
@@ -601,12 +629,30 @@ textarea.gi{resize:vertical;min-height:56px}
         </div>
       </div>
 
+      <!-- CHECK -->
+      <div class="irow">
+        <div class="itag">CHECK</div>
+        <div class="ib">
+          <div class="il">Check Delivery</div>
+          <div class="pin-r">
+            <input type="text" class="pin-i" id="pinInput" placeholder="Enter 6-digit PIN code" maxlength="6" inputmode="numeric">
+            <button class="pin-b" onclick="checkPin()">Check</button>
+          </div>
+          <div class="pin-re" id="pinResult"></div>
+          <div class="dlv-r">
+            <span class="dlv-b">Free Delivery</span>
+            <span class="dlv-b">7-Day Easy Returns</span>
+            <span class="dlv-b">Secure Payments</span>
+          </div>
+        </div>
+      </div>
+
       <!-- CERT -->
       <div class="irow">
         <div class="itag">CERT</div>
         <div class="ib">
           <div class="il">Certified materials</div>
-          <p class="cert-p">18k gold plated, hypoallergenic brass. Nickel and lead-free, meeting current international safety regulations.</p>
+          <p class="cert-p">18k gold plated, hypoallergenic brass. Anti-tarnish E-coat, nickel and lead-free. Hallmarked authenticity with a 1-year plating warranty.</p>
           <div class="trust-badges">
             <div><img src="https://cdn.shopify.com/s/files/1/0640/5167/5359/files/TrustBadges_IsharyaPDP_1.png?v=1770119495" alt=""></div>
             <div><img src="https://cdn.shopify.com/s/files/1/0640/5167/5359/files/TrustBadges_IsharyaPDP_3.png?v=1770119495" alt=""></div>
@@ -672,19 +718,6 @@ textarea.gi{resize:vertical;min-height:56px}
             <div><div class="oc-code">INSIDER15</div><div class="oc-desc">15% off for iSharya Insider members.</div></div>
             <button class="copy-b" onclick="copyCode('INSIDER15',this)">Copy</button>
           </div>
-        </div>
-      </div>
-
-      <!-- CHECK -->
-      <div class="irow">
-        <div class="itag">CHECK</div>
-        <div class="ib">
-          <div class="il">Check Delivery</div>
-          <div class="pin-r">
-            <input type="text" class="pin-i" id="pinInput" placeholder="Enter 6-digit PIN code" maxlength="6" inputmode="numeric">
-            <button class="pin-b" onclick="checkPin()">Check</button>
-          </div>
-          <div class="pin-re" id="pinResult"></div>
         </div>
       </div>
 
@@ -794,6 +827,26 @@ textarea.gi{resize:vertical;min-height:56px}
     </div>
   </section>
 
+
+  <!-- BUNDLE -->
+  <section class="wrap reveal" id="bundle">
+    <div class="shd">
+      <div class="eyebrow">Curated by our stylists</div>
+      <h2 class="sec-h">Complete the Look</h2>
+      <p class="sec-s">Pieces chosen to pair with the Tennis Girlie Square. Styled together, saved together.</p>
+    </div>
+    <div class="bnd-tiers">
+      <div class="bnd-t"><div class="bnd-tt">Buy any 2</div><div class="bnd-tp">Rs.2,999 each</div><div class="bnd-td">Applied automatically at checkout</div></div>
+      <div class="bnd-t bnd-hl"><div class="bnd-bb">Most chosen</div><div class="bnd-tt">Buy any 3</div><div class="bnd-tp">Rs.3,999 for the set's hero plus 15% off the rest</div><div class="bnd-td">Stylist set pricing, no code needed</div></div>
+    </div>
+    <div class="bnd-strip">
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Small Hoops</div><div class="bnd-cp">Rs.2,799</div><button class="bnd-add" onclick="addToCart()">Add</button></div>
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Pendant</div><div class="bnd-cp">Rs.3,299</div><button class="bnd-add" onclick="addToCart()">Add</button></div>
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Stack Ring</div><div class="bnd-cp">Rs.2,499</div><button class="bnd-add" onclick="addToCart()">Add</button></div>
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Bracelet</div><div class="bnd-cp">Rs.3,599</div><button class="bnd-add" onclick="addToCart()">Add</button></div>
+    </div>
+  </section>
+
   <!-- TRY ON -->
   <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal" id="tryon-section">
     <div class="shd">
@@ -867,34 +920,35 @@ textarea.gi{resize:vertical;min-height:56px}
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section style="padding:var(--sp) 0;border-top:1px solid var(--bdr)" class="reveal" id="reviews">
+
+
+  <!-- FAQ -->
+  <section class="wrap reveal">
     <div class="shd">
-      <div class="eyebrow">Verified Reviews</div>
-      <h2 class="sec-h">What people are saying</h2>
+      <div class="eyebrow">Good to know</div>
+      <h2 class="sec-h">Questions, answered</h2>
     </div>
-    <div class="rv-sum">
-      <div style="text-align:center;flex-shrink:0">
-        <div class="rn">4.8</div>
-        <div class="rs">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="rc">124 reviews</div>
-      </div>
-      <div class="rbs">
-        <div class="rb-r"><span class="rb-l">5 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:82%"></div></div><span class="rb-p">82%</span></div>
-        <div class="rb-r"><span class="rb-l">4 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:11%"></div></div><span class="rb-p">11%</span></div>
-        <div class="rb-r"><span class="rb-l">3 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:5%"></div></div><span class="rb-p">5%</span></div>
-        <div class="rb-r"><span class="rb-l">2 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:1%"></div></div><span class="rb-p">1%</span></div>
-        <div class="rb-r"><span class="rb-l">1 &#9733;</span><div class="rb-t"><div class="rb-f" style="width:1%"></div></div><span class="rb-p">1%</span></div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:9px;flex-shrink:0">
-        <button class="btn-o" style="width:auto;padding:11px 22px;font-size:11px;margin:0 auto">Write a Review</button>
-        <div style="font-size:11px;color:var(--dim)">Verified purchasers only.</div>
-      </div>
+    <div class="faq-w">
+      <div class="faq"><button class="faq-q" onclick="tgFaq(this)">How do I care for the gold plating?<span>+</span></button><div class="faq-a">Wipe with the included soft cloth after wear, store in the pouch, and keep away from perfume and water. The anti-tarnish E-coat protects daily wear, and plating is covered for one year.</div></div>
+      <div class="faq"><button class="faq-q" onclick="tgFaq(this)">What if they don't suit me?<span>+</span></button><div class="faq-a">7-day no-questions returns and exchanges. Pickup is arranged from your doorstep, refunds process within 5 business days.</div></div>
+      <div class="faq"><button class="faq-q" onclick="tgFaq(this)">Are these safe for sensitive ears?<span>+</span></button><div class="faq-a">Yes. Hypoallergenic brass base, nickel and lead-free, certified to international safety standards.</div></div>
+      <div class="faq"><button class="faq-q" onclick="tgFaq(this)">Is Cash on Delivery available?<span>+</span></button><div class="faq-a">COD is available on orders up to Rs.10,000 across most PIN codes. Check yours in the delivery section above.</div></div>
+      <div class="faq"><button class="faq-q" onclick="tgFaq(this)">Can I send this as a gift?<span>+</span></button><div class="faq-a">Yes, choose gift packaging at no extra cost. It ships in iSharya's signature box with a handwritten-style note and no price on the invoice.</div></div>
     </div>
-    <div class="rv-g">
-      <div class="rcd"><div class="rcd-hd"><span class="rcd-n">Priya M.</span><span class="rcd-d">May 2025</span></div><div class="rcd-s">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rcd-h">My most-complimented earring</div><div class="rcd-b">Wore these to a friend's wedding mehendi and got asked about them at least five times. The front-back design is clever, double the sparkle without extra weight. Packaging was beautiful.</div><div class="rcd-v">Verified Purchase</div></div>
-      <div class="rcd"><div class="rcd-hd"><span class="rcd-n">Sanya K.</span><span class="rcd-d">April 2025</span></div><div class="rcd-s">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="rcd-h">Perfect everyday piece</div><div class="rcd-b">Was unsure about the size, 30mm felt big on paper. They sit perfectly in person. Wore them every day for a month and there is zero tarnish. The gold tone is warm, not tacky-yellow.</div><div class="rcd-v">Verified Purchase</div></div>
-      <div class="rcd"><div class="rcd-hd"><span class="rcd-n">Rishika S.</span><span class="rcd-d">March 2025</span></div><div class="rcd-s">&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="rcd-h">Gifted this, she loved it</div><div class="rcd-b">Birthday gift for my sister. The box is super presentable, no extra wrapping needed. She said it is her new favourite. Four stars because delivery ran a day longer than promised.</div><div class="rcd-v">Verified Purchase</div></div>
+  </section>
+
+
+  <!-- RELATED -->
+  <section class="wrap reveal">
+    <div class="shd">
+      <div class="eyebrow">Keep exploring</div>
+      <h2 class="sec-h">You may also like</h2>
+    </div>
+    <div class="bnd-strip">
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Round Hoops</div><div class="bnd-cp">Rs.3,499</div><button class="bnd-add">View</button></div>
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Studs</div><div class="bnd-cp">Rs.2,299</div><button class="bnd-add">View</button></div>
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Square Front Back, Silver</div><div class="bnd-cp">Rs.3,999</div><button class="bnd-add">View</button></div>
+      <div class="bnd-c"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=600" alt=""><div class="bnd-cn">Tennis Girlie Ear Cuff</div><div class="bnd-cp">Rs.1,999</div><button class="bnd-add">View</button></div>
     </div>
   </section>
 
@@ -913,11 +967,18 @@ textarea.gi{resize:vertical;min-height:56px}
 
 <!-- STICKY ATC -->
 <div class="satc" id="satcEl">
-  <div class="si"><div class="si-n">Tennis Girlie Square Front Back</div><div class="si-p">Rs.3,999</div></div>
-  <button class="sb" onclick="addToCart()">Add to Cart</button>
+  <div class="satc-trust">Hallmarked &#183; Anti-Tarnish &#183; 7-Day Returns</div>
+  <div class="satc-row">
+    <div class="si"><div class="si-n">Tennis Girlie Square</div><div class="si-p">Rs.3,999 <span class="si-was">Rs.4,999</span></div></div>
+    <div class="satc-btns">
+      <button class="sb sb-o" onclick="addToCart()">Add to Cart</button>
+      <button class="sb" onclick="buyNow()">Buy Now</button>
+    </div>
+  </div>
 </div>
 
 <button class="try-f" onclick="openTryHome()">Try at Home</button>
+<div class="rp-toast" id="rpToast"></div>
 
 <!-- TRY AT HOME MODAL -->
 <div class="mbg" id="tryHomeModal">
@@ -981,7 +1042,11 @@ function closeLb(){document.getElementById('lbBg').classList.remove('open');docu
 function lbNav(d){setSlide(cs+d);document.getElementById('lbImg').src=srcs[cs];}
 function changeQty(d){const el=document.getElementById('qtyVal');const v=parseInt(el.value);if(v+d<1)return;el.value=v+d;}
 function copyCode(code,btn){navigator.clipboard.writeText(code).catch(()=>{});const o=btn.textContent;btn.textContent='Copied';btn.style.cssText='background:var(--gold);color:#fff;border-color:var(--gold)';setTimeout(()=>{btn.textContent=o;btn.style.cssText='';},2000);}
-function checkPin(){const v=document.getElementById('pinInput').value.trim();const r=document.getElementById('pinResult');if(!/^\d{6}$/.test(v)){r.textContent='Please enter a valid 6-digit PIN code.';r.className='pin-re fail';return;}r.textContent='Checking...';r.className='pin-re';setTimeout(()=>{r.textContent='Delivery available. Estimated 2 to 4 business days. Free shipping applied.';r.className='pin-re ok';},700);}
+const rpData=[['Ananya','Pune','22 minutes'],['Mehak','Gurgaon','1 hour'],['Shruti','Bengaluru','3 hours'],['Ritika','Mumbai','5 hours']];let rpI=0;
+function showRp(){const t=document.getElementById('rpToast');const d=rpData[rpI%rpData.length];rpI++;t.innerHTML='<b>'+d[0]+' from '+d[1]+'</b> bought this '+d[2]+' ago';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),5200);}
+setTimeout(showRp,7000);setInterval(showRp,19000);
+function tgFaq(btn){const f=btn.parentElement;f.classList.toggle('open');}
+function checkPin(){const v=document.getElementById('pinInput').value.trim();const r=document.getElementById('pinResult');if(!/^\d{6}$/.test(v)){r.textContent='Please enter a valid 6-digit PIN code.';r.className='pin-re fail';return;}r.textContent='Checking...';r.className='pin-re';setTimeout(()=>{const d=new Date();d.setDate(d.getDate()+4);const ds=d.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});r.textContent='Delivery by '+ds+' \u00B7 Free shipping \u00B7 COD available.';r.className='pin-re ok';},700);}
 document.getElementById('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')checkPin();});
 function toggleGift(){const c=document.getElementById('giftChk');c.checked=!c.checked;toggleGiftFields();}
 function toggleGiftFields(){document.getElementById('giftFields').classList.toggle('open',document.getElementById('giftChk').checked);}
