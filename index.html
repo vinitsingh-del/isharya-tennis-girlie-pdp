@@ -570,6 +570,36 @@ textarea.gi{resize:vertical;min-height:56px}
 
     <div class="info-body">
 
+      <!-- PRICE + CTA -->
+      <div class="irow">
+        <div class="itag">PRICE</div>
+        <div class="ib">
+          <div style="margin-bottom:4px">
+            <span class="p-num">Rs.3,999</span>
+            <span class="p-note">MRP &#183; Inclusive of all taxes</span>
+          </div>
+          <div class="p-emi">EMI from Rs.333 per month &#183; <a href="#price-breakup">View price breakup</a></div>
+          <div class="qty-r">
+            <span class="qty-l">Qty</span>
+            <div class="qty-w">
+              <button class="qb" onclick="changeQty(-1)">&#8722;</button>
+              <input type="text" class="qv" id="qtyVal" value="1" readonly>
+              <button class="qb" onclick="changeQty(1)">+</button>
+            </div>
+          </div>
+          <div class="cta-s">
+            <button class="btn-g" onclick="buyNow()">Buy Now</button>
+            <button class="btn-o" id="mainAtcBtn" onclick="addToCart()">Add to Cart</button>
+            <a href="https://isharya.com/pages/ishayra-store" class="btn-t">Visit Store and Try On In-Person</a>
+          </div>
+          <div class="pay-r">
+            <span class="pay-l">Pay via</span>
+            <span class="pbg">UPI</span><span class="pbg">Credit Card</span>
+            <span class="pbg">Net Banking</span><span class="pbg">COD</span><span class="pbg">EMI</span>
+          </div>
+        </div>
+      </div>
+
       <!-- CERT -->
       <div class="irow">
         <div class="itag">CERT</div>
@@ -608,36 +638,6 @@ textarea.gi{resize:vertical;min-height:56px}
             <div class="sig-row"><span class="sig-n">01</span><span class="sig-l">Looks delicate on the ear</span><span class="sig-p">93%</span></div>
             <div class="sig-row"><span class="sig-n">02</span><span class="sig-l">Easy to gift as-is</span><span class="sig-p">89%</span></div>
             <div class="sig-row"><span class="sig-n">03</span><span class="sig-l">Would repurchase</span><span class="sig-p">96%</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRICE + CTA -->
-      <div class="irow">
-        <div class="itag">PRICE</div>
-        <div class="ib">
-          <div style="margin-bottom:4px">
-            <span class="p-num">Rs.3,999</span>
-            <span class="p-note">MRP &#183; Inclusive of all taxes</span>
-          </div>
-          <div class="p-emi">EMI from Rs.333 per month &#183; <a href="#price-breakup">View price breakup</a></div>
-          <div class="qty-r">
-            <span class="qty-l">Qty</span>
-            <div class="qty-w">
-              <button class="qb" onclick="changeQty(-1)">&#8722;</button>
-              <input type="text" class="qv" id="qtyVal" value="1" readonly>
-              <button class="qb" onclick="changeQty(1)">+</button>
-            </div>
-          </div>
-          <div class="cta-s">
-            <button class="btn-g" onclick="buyNow()">Buy Now</button>
-            <button class="btn-o" id="mainAtcBtn" onclick="addToCart()">Add to Cart</button>
-            <a href="https://isharya.com/pages/ishayra-store" class="btn-t">Visit Store and Try On In-Person</a>
-          </div>
-          <div class="pay-r">
-            <span class="pay-l">Pay via</span>
-            <span class="pbg">UPI</span><span class="pbg">Credit Card</span>
-            <span class="pbg">Net Banking</span><span class="pbg">COD</span><span class="pbg">EMI</span>
           </div>
         </div>
       </div>
