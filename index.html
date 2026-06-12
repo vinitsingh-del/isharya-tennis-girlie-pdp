@@ -128,7 +128,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 /* ── IROW SYSTEM ──────────────────────────────────────── */
 /* Exact Mia pattern: 54px tag | content */
 .info-body{padding:0 40px 110px}
-.irow{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--bdr);align-items:start}
+.irow{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:17px 0;border-top:1px solid var(--bdr);align-items:start}
 .irow:first-child{padding-top:20px}
 .itag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-top:3px;line-height:1.5}
 .ib{min-width:0}
@@ -320,7 +320,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .svc-s{font-size:11px;color:var(--muted);line-height:1.5}
 
 /* STICKY ATC */
-.satc{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-top:1px solid var(--bdr-l);padding:12px var(--px);z-index:90;display:none;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .3s ease}
+.satc{position:fixed;bottom:12px;left:12px;right:12px;background:rgba(255,255,255,.58);backdrop-filter:blur(22px) saturate(1.7);-webkit-backdrop-filter:blur(22px) saturate(1.7);border:1px solid rgba(255,255,255,.65);border-radius:20px;box-shadow:0 10px 34px rgba(38,14,21,.16);padding:12px 16px;z-index:90;display:none;align-items:center;justify-content:space-between;gap:14px;transform:translateY(130%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .satc.show{transform:translateY(0)}
 .si{display:flex;flex-direction:column;gap:2px}
 .si-n{font-size:12px;font-weight:500;color:var(--white)}
@@ -406,12 +406,12 @@ textarea.gi{resize:vertical;min-height:56px}
   .gpill{font-size:9px;padding:6px 10px}
   .g-ct{bottom:16px;right:12px;font-size:10px}
   .gthumb{width:46px;height:50px}
-  .info{padding:20px 16px 100px}
+  .info{padding:20px 16px 56px}
   .info-name{font-size:23px}
   .p-num{font-size:30px}
   .chips{gap:5px}
   .chip{font-size:9px;padding:4px 8px}
-  .irow{grid-template-columns:1fr;gap:8px;padding:18px 0}
+  .irow{grid-template-columns:1fr;gap:6px;padding:13px 0}
   .irow .itag{margin-bottom:2px}
   .trust-badges img{height:28px}
   .mini-ugc img{width:100%;height:96px}
@@ -421,10 +421,10 @@ textarea.gi{resize:vertical;min-height:56px}
   .btn-g{padding:16px;font-size:12px}
   .btn-o{padding:15px;font-size:11px}
   .btn-t{padding:13px}
-  .oc{padding:11px 12px}
+  .oc{padding:9px 12px;margin-bottom:6px}
   .oc-code{font-size:15px}
-  .pin-i{font-size:16px;padding:12px}
-  .pin-b{padding:12px 14px;font-size:9px}
+  .pin-i{font-size:16px;padding:10px 12px}
+  .pin-b{padding:10px 13px;font-size:9px}
   .gi{font-size:16px;padding:12px}
   .sec-h{font-size:23px}
   .pxl-panel{height:58vh;min-height:380px}
@@ -447,7 +447,7 @@ textarea.gi{resize:vertical;min-height:56px}
   .satc{padding:10px 14px}
   .satc .ms{font-size:11px;max-width:44vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .satc .mt{font-size:18px}
-  .satc button{padding:13px 20px;font-size:10px}
+  .satc button{border-radius:13px;padding:13px 20px;font-size:10px}
   .mbox{padding:24px 18px;max-height:88vh}
   .mf2{grid-template-columns:1fr}
   .mf input,.mf select,.mf2 input,.mf2 select{font-size:16px}
@@ -456,7 +456,7 @@ textarea.gi{resize:vertical;min-height:56px}
   .tz{height:280px;padding:0 20px}
   #tryonPh{height:300px!important}
   .shd{margin-bottom:30px}
-  .info-top{padding:22px 16px 0}
+  .info-top{padding:20px 16px 0}
   .info-body{padding:0 16px 100px}
 }
 @media(min-width:1081px){
@@ -996,7 +996,10 @@ function closeTryHome(){document.getElementById('tryHomeModal').classList.remove
 function bookVisit(){closeTryHome();setTimeout(()=>alert('Visit booked. Our team will confirm within 24 hours.'),150);}
 function handleTryon(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{document.getElementById('tryonUsr').src=ev.target.result;document.getElementById('tryonPh').style.display='none';document.getElementById('tryonRes').style.display='block';};r.readAsDataURL(f);}
 const satcEl=document.getElementById('satcEl');
-new IntersectionObserver(entries=>{if(window.innerWidth<=1080)entries.forEach(e=>satcEl.classList.toggle('show',!e.isIntersecting));},{threshold:0}).observe(document.getElementById('mainAtcBtn'));
+let atcVisible=true,hasScrolled=false;
+new IntersectionObserver(entries=>{entries.forEach(e=>{atcVisible=e.isIntersecting;updSatc();});},{threshold:0}).observe(document.getElementById('mainAtcBtn'));
+window.addEventListener('scroll',()=>{if(window.scrollY>320)hasScrolled=true;if(window.scrollY<=60)hasScrolled=false;updSatc();},{passive:true});
+function updSatc(){if(window.innerWidth>1080)return;satcEl.classList.toggle('show',hasScrolled&&!atcVisible);}
 new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}}); },{threshold:0.06}).observe(document.body);
 document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});},{threshold:0.06}).observe(el));
 const pxls=document.querySelectorAll('[data-parallax]');
