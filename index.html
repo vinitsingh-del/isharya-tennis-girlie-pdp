@@ -89,9 +89,9 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .gslide:nth-child(even).on img{animation:kb2 8s ease-out forwards}
 @keyframes kb{0%{transform:scale(1) translateX(0)}100%{transform:scale(1.12) translateX(-2.2%)}}
 @keyframes kb2{0%{transform:scale(1.08) translateX(1.5%)}100%{transform:scale(1) translateX(0)}}
-.hero-float{position:absolute;top:0;left:0;right:0;z-index:3;text-align:center;padding:24px 64px 30px;background:linear-gradient(to bottom,rgba(255,255,255,.97) 0%,rgba(255,255,255,.8) 60%,transparent 100%);pointer-events:none;display:none}
+.hero-float{position:absolute;top:16px;left:50%;transform:translateX(-50%);z-index:3;text-align:center;padding:13px 26px 14px;background:rgba(255,255,255,.42);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7);border:1px solid rgba(255,255,255,.6);border-radius:18px;box-shadow:0 10px 32px rgba(38,14,21,.14);pointer-events:none;display:none;max-width:88%;width:max-content}
 .hf-eyebrow{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.hf-title{font-family:'Archivo',sans-serif;font-size:clamp(16px,4.4vw,22px);font-weight:600;color:var(--white);line-height:1.25;letter-spacing:.03em;text-transform:uppercase}
+.hf-title{font-family:'Archivo',sans-serif;font-size:clamp(15px,4vw,20px);font-weight:600;color:var(--white);line-height:1.22;letter-spacing:.03em;text-transform:uppercase}
 .hf-price{font-family:'Jost',sans-serif;font-weight:500;font-size:15px;color:var(--gold);margin-top:6px}
 
 /* Stage overlays */
@@ -258,7 +258,8 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .sw-t::before{content:'';position:absolute;width:14px;height:14px;left:3px;top:3px;background:var(--dim);border-radius:50%;transition:.3s}
 .sw input:checked+.sw-t{background:var(--gold);border-color:var(--gold)}
 .sw input:checked+.sw-t::before{transform:translateX(18px);background:#fff}
-.gf{display:none;flex-direction:column;gap:8px;margin-top:14px}
+.gt-hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:8px}
+.gf{display:flex;flex-direction:column;gap:10px}
 .gf.open{display:flex}
 .gi{background:var(--bg-s);border:1px solid var(--bdr-l);color:var(--white);font-size:13px;padding:10px 12px;width:100%}
 .gi::placeholder{color:var(--dim)}
@@ -377,6 +378,15 @@ textarea.gi{resize:vertical;min-height:56px}
 .mfc input{accent-color:var(--gold)}
 
 /* LIGHTBOX */
+.ugc-box{background:var(--bg);border:1px solid var(--bdr-l);border-radius:16px;width:100%;max-width:380px;max-height:90vh;overflow:hidden;position:relative;box-shadow:0 24px 60px rgba(38,14,21,.3)}
+.ugc-box .mx{top:12px;right:12px;z-index:2;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);border-radius:20px;padding:6px 12px}
+.ugc-img{width:100%;height:340px;overflow:hidden;background:var(--bg-s)}
+.ugc-img img{width:100%;height:100%;object-fit:cover}
+.ugc-info{padding:18px 22px 24px}
+.ugc-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:6px}
+.ugc-who{font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--white);margin-bottom:8px}
+.ugc-quote{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:12px}
+.ugc-tag{display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-lo);background:var(--bg-s);padding:4px 10px;border-radius:3px}
 .lbbg{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:210;display:none;align-items:center;justify-content:center;padding:24px}
 .lbbg.open{display:flex}
 .lb{position:relative;max-width:780px;width:100%}
@@ -489,7 +499,7 @@ textarea.gi{resize:vertical;min-height:56px}
   .satc-btns .sb{padding:12px 13px;font-size:9px}
   .satc .si-n{font-size:10.5px;max-width:34vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .satc-trust{font-size:8px}
-  .hero-float{padding:18px 14px 14px}
+  .hero-float{padding:11px 20px 12px;top:12px}
   .hf-title{font-size:17px}
   .tz{height:280px;padding:0 20px}
   #tryonPh{height:300px!important}
@@ -678,10 +688,10 @@ textarea.gi{resize:vertical;min-height:56px}
         <div class="ib">
           <div class="il">Seen on iSharya customers</div>
           <div class="mini-ugc">
-            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Aditi, Delhi</div></div>
-            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Sanya, Mumbai</div></div>
-            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Rhea, BLR</div></div>
-            <div class="mu-item"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Priya, Chennai</div></div>
+            <div class="mu-item" onclick="openUgc(0)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Aditi, Delhi</div></div>
+            <div class="mu-item" onclick="openUgc(1)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Sanya, Mumbai</div></div>
+            <div class="mu-item" onclick="openUgc(2)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Rhea, BLR</div></div>
+            <div class="mu-item" onclick="openUgc(3)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=300" alt=""><div class="mu-name">Priya, Chennai</div></div>
           </div>
         </div>
       </div>
@@ -742,12 +752,7 @@ textarea.gi{resize:vertical;min-height:56px}
               <span class="sw-t"></span>
             </label>
           </div>
-          <div class="gf" id="giftFields">
-            <input class="gi" type="text" placeholder="Recipient name">
-            <input class="gi" type="text" placeholder="Occasion">
-            <textarea class="gi" placeholder="Personal message (optional)"></textarea>
-            <div class="gwr"><input type="checkbox" id="gwchk"><label for="gwchk">Add premium gift wrapping (Rs.99)</label></div>
-          </div>
+          <p class="gt-hint">Add a recipient, message and premium wrapping. Ships with no price on the invoice.</p>
         </div>
       </div>
 
@@ -1009,6 +1014,37 @@ textarea.gi{resize:vertical;min-height:56px}
   </div>
 </div>
 
+
+<!-- GIFT MODAL -->
+<div class="mbg" id="giftModal">
+  <div class="mbox">
+    <button class="mx" onclick="closeGift()">Close</button>
+    <div class="mt">Send as a Gift</div>
+    <div class="ms">We'll wrap it in iSharya's signature box with a handwritten-style note. No price appears on the invoice.</div>
+    <div class="gf">
+      <div class="mf"><label>Recipient name</label><input type="text" placeholder="e.g. Aanya"></div>
+      <div class="mf"><label>Occasion</label><input type="text" placeholder="Birthday, Anniversary, Just because"></div>
+      <div class="mf"><label>Personal message</label><textarea placeholder="Write a short note (optional)"></textarea></div>
+      <div class="mfc"><input type="checkbox" id="gwchk"><label for="gwchk">Add premium gift wrapping (Rs.99)</label></div>
+    </div>
+    <button class="btn-g" onclick="saveGift()">Save Gift Details</button>
+  </div>
+</div>
+
+<!-- UGC MODAL -->
+<div class="mbg" id="ugcModal" onclick="closeUgc()">
+  <div class="ugc-box" onclick="event.stopPropagation()">
+    <button class="mx" onclick="closeUgc()">Close</button>
+    <div class="ugc-img"><img id="ugcImg" src="" alt=""></div>
+    <div class="ugc-info">
+      <div class="ugc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="ugc-who" id="ugcWho"></div>
+      <p class="ugc-quote" id="ugcQuote"></p>
+      <div class="ugc-tag" id="ugcTag"></div>
+    </div>
+  </div>
+</div>
+
 <!-- LIGHTBOX -->
 <div class="lbbg" id="lbBg" onclick="closeLb()">
   <div class="lb" onclick="event.stopPropagation()">
@@ -1058,8 +1094,11 @@ setTimeout(showRp,7000);setInterval(showRp,19000);
 function tgFaq(btn){const f=btn.parentElement;f.classList.toggle('open');}
 function checkPin(){const v=document.getElementById('pinInput').value.trim();const r=document.getElementById('pinResult');if(!/^\d{6}$/.test(v)){r.textContent='Please enter a valid 6-digit PIN code.';r.className='pin-re fail';return;}r.textContent='Checking...';r.className='pin-re';setTimeout(()=>{const d=new Date();d.setDate(d.getDate()+4);const ds=d.toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});r.textContent='Delivery by '+ds+' \u00B7 Free shipping \u00B7 COD available.';r.className='pin-re ok';},700);}
 document.getElementById('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')checkPin();});
-function toggleGift(){const c=document.getElementById('giftChk');c.checked=!c.checked;toggleGiftFields();}
-function toggleGiftFields(){document.getElementById('giftFields').classList.toggle('open',document.getElementById('giftChk').checked);}
+function toggleGift(){const c=document.getElementById('giftChk');if(!c.checked){c.checked=true;openGift();}else{c.checked=false;}}
+function openGift(){document.getElementById('giftModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeGift(){document.getElementById('giftModal').classList.remove('open');document.body.style.overflow='';}
+function saveGift(){closeGift();}
+function toggleGiftFields(){if(document.getElementById('giftChk').checked)openGift();}
 let inCart=0;
 function addToCart(){inCart++;document.getElementById('cartCount').textContent=inCart;const btn=document.getElementById('mainAtcBtn');const o=btn.textContent;btn.textContent='Added to Cart';btn.style.borderColor='var(--gold)';btn.style.color='var(--gold)';setTimeout(()=>{btn.textContent=o;btn.style.borderColor='';btn.style.color='';},2000);}
 function buyNow(){window.location.href='https://isharya.com/cart';}
@@ -1067,6 +1106,15 @@ function shareProduct(){if(navigator.share){navigator.share({title:'Tennis Girli
 function toggleSave(btn){const s=btn.dataset.saved==='true';btn.dataset.saved=(!s).toString();btn.textContent=s?'Save':'Saved';btn.style.background=s?'':'var(--gold)';btn.style.color=s?'':'#111';}
 function scrollToTryon(){document.getElementById('tryon-section').scrollIntoView({behavior:'smooth'});}
 function showCare(e){e.preventDefault();alert('iSharya Care Guide\n\nClean with a soft dry cloth after each wear.\nStore in the iSharya box, separate from other pieces.\nAvoid contact with perfume, chemicals, and water.\nRemove before showering, swimming, or exercising.\n\n1-Year Warranty on plating and manufacturing defects.');}
+
+const ugcData=[
+  ['https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=900','Aditi, Delhi','Wore these to a friend\'s sangeet and got asked about them all night. They catch the light beautifully and feel feather-light.','Verified Buyer'],
+  ['https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=900','Sanya, Mumbai','The front-back style is so clever, looks like two earrings in one. Goes with both my work shirts and party dresses.','Verified Buyer'],
+  ['https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=900','Rhea, Bengaluru','Bought as a gift, kept them for myself. The gold has not faded after months of daily wear.','Verified Buyer'],
+  ['https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=900','Priya, Chennai','My go-to for everything now. Comfortable enough for a full day and they photograph stunning.','Verified Buyer']
+];
+function openUgc(i){const d=ugcData[i];document.getElementById('ugcImg').src=d[0];document.getElementById('ugcWho').textContent=d[1];document.getElementById('ugcQuote').textContent='"'+d[2]+'"';document.getElementById('ugcTag').textContent=d[3];document.getElementById('ugcModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeUgc(){document.getElementById('ugcModal').classList.remove('open');document.body.style.overflow='';}
 function openTryHome(){document.getElementById('tryHomeModal').classList.add('open');document.body.style.overflow='hidden';}
 function closeTryHome(){document.getElementById('tryHomeModal').classList.remove('open');document.body.style.overflow='';}
 function bookVisit(){closeTryHome();setTimeout(()=>alert('Visit booked. Our team will confirm within 24 hours.'),150);}
