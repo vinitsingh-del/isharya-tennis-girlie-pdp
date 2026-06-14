@@ -78,12 +78,14 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .gthumb{width:52px;height:60px;border:1px solid var(--bdr);opacity:.65;cursor:pointer;overflow:hidden;flex-shrink:0;transition:border-color .2s}
 .gthumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .gthumb:hover img{transform:scale(1.07)}
+.gthumb-v{position:relative}
+.gthumb-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:12px;text-shadow:0 1px 6px rgba(0,0,0,.6);pointer-events:none}
 .gthumb.on{border-color:var(--gold);opacity:1}
 .gthumb:hover{opacity:1}
 .gal-stage{position:relative;overflow:hidden;background:#F7F4EF}
 .gslide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
 .gslide.on{opacity:1}
-.gslide img{width:100%;height:100%;object-fit:cover;object-position:center}
+.gslide img,.gslide video{width:100%;height:100%;object-fit:cover;object-position:center}
 .gslide.on img{animation:kb 8s ease-out forwards}
 .gslide:nth-child(even).on img{animation:kb2 8s ease-out forwards}
 .gslide:nth-child(even).on img{animation:kb2 8s ease-out forwards}
@@ -563,15 +565,17 @@ textarea.gi{resize:vertical;min-height:56px}
   <!-- GALLERY -->
   <div class="gal">
     <div class="gal-thumbs">
-      <div class="gthumb on" onclick="setSlide(0);resetAuto()"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=200" alt=""></div>
-      <div class="gthumb" onclick="setSlide(1);resetAuto()"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=200" alt=""></div>
-      <div class="gthumb" onclick="setSlide(2);resetAuto()"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=200" alt=""></div>
-      <div class="gthumb" onclick="setSlide(3);resetAuto()"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=200" alt=""></div>
-      <div class="gthumb" onclick="setSlide(4);resetAuto()"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb gthumb-v on" onclick="setSlide(0)"><img src="hero-poster.jpg" alt="Video"><span class="gthumb-play">&#9658;</span></div>
+      <div class="gthumb" onclick="setSlide(1)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(2)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(3)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(4)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=200" alt=""></div>
+      <div class="gthumb" onclick="setSlide(5)"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=200" alt=""></div>
     </div>
     <div class="gal-stage">
       <div class="hero-float"><div class="hf-eyebrow">Tennis Collection</div><div class="hf-title">Tennis Girlie Square Front Back Earrings</div></div>
-      <div class="gslide on"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080" alt="Tennis Girlie Square Front Back Earrings by iSharya"></div>
+      <div class="gslide on"><video id="heroVid" src="hero.mp4" poster="hero-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+      <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080" alt="Tennis Girlie Square Front Back Earrings by iSharya"></div>
       <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1080" alt="Detail view"></div>
       <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1080" alt="Worn shot"></div>
       <div class="gslide"><img src="https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=1080" alt="Side angle"></div>
@@ -1076,11 +1080,11 @@ textarea.gi{resize:vertical;min-height:56px}
 <script>
 let cs=0;
 const slides=document.querySelectorAll('.gslide'),thumbs=document.querySelectorAll('.gthumb');
-const srcs=['https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=1080'];
-function setSlide(i){slides[cs].classList.remove('on');thumbs[cs].classList.remove('on');cs=(i+slides.length)%slides.length;slides[cs].classList.add('on');thumbs[cs].classList.add('on');}
+const srcs=['hero-poster.jpg','https://isharya.com/cdn/shop/files/E2627-65-710_2.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_3.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_4.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_5.jpg?v=1773304655&width=1080','https://isharya.com/cdn/shop/files/E2627-65-710_1.jpg?v=1773304655&width=1080'];
+function setSlide(i){slides[cs].classList.remove('on');thumbs[cs].classList.remove('on');cs=(i+slides.length)%slides.length;slides[cs].classList.add('on');thumbs[cs].classList.add('on');const v=document.getElementById('heroVid');if(v){if(cs===0){v.play().catch(()=>{});}else{v.pause();}}}
 document.addEventListener('keydown',e=>{if(document.getElementById('lbBg').classList.contains('open'))return;if(e.key==='ArrowLeft'){setSlide(cs-1);resetAuto();}if(e.key==='ArrowRight'){setSlide(cs+1);resetAuto();}});
-let autoT=setInterval(()=>setSlide(cs+1),3800);
-function resetAuto(){clearInterval(autoT);autoT=setInterval(()=>setSlide(cs+1),3800);}
+let autoT=null;
+function resetAuto(){}
 const stg=document.querySelector('.gal-stage');let tx=0;
 stg.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
 stg.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>36){setSlide(dx<0?cs+1:cs-1);resetAuto();}});
