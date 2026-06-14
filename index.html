@@ -8,7 +8,7 @@
 <meta name="build" content="v6-hero-motion">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;125,600;125,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ── iSHARYA BRAND TOKENS (exact from live site) ──────── */
 :root{
@@ -33,15 +33,15 @@
 }
 *, *::before, *::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button,input,select,textarea{font-family:inherit;outline:none}
 
 /* ── TYPOGRAPHY ───────────────────────────────────────── */
-.cg{font-family:'Archivo',sans-serif}
+.cg{font-family:'Jost',sans-serif}
 .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.sec-h{font-family:'Archivo',sans-serif;font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.18;color:var(--white);letter-spacing:.04em;text-transform:uppercase}
+.sec-h{font-family:'Jost',sans-serif;font-size:clamp(20px,2.6vw,30px);font-weight:600;line-height:1.18;color:var(--white);letter-spacing:.04em;text-transform:uppercase}
 .sec-s{font-size:13px;color:var(--sub);margin-top:7px;line-height:1.7}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
@@ -93,7 +93,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 @keyframes kb2{0%{transform:scale(1.08) translateX(1.5%)}100%{transform:scale(1) translateX(0)}}
 .hero-float{position:absolute;top:12px;left:12px;right:12px;z-index:3;text-align:center;padding:7px 18px 8px;background:rgba(255,255,255,.42);backdrop-filter:blur(20px) saturate(1.7);-webkit-backdrop-filter:blur(20px) saturate(1.7);border:1px solid rgba(255,255,255,.6);border-radius:14px;box-shadow:0 8px 26px rgba(38,14,21,.14);pointer-events:none;display:none}
 .hf-eyebrow{font-size:7px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
-.hf-title{font-family:'Archivo',sans-serif;font-size:clamp(11px,2.9vw,14px);font-weight:600;line-height:1.18;letter-spacing:.03em;text-transform:uppercase;background:linear-gradient(110deg,var(--white) 0%,var(--white) 38%,#A8842F 48%,#E8CCCE 53%,var(--white) 62%,var(--white) 100%);background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--white);animation:hfshine 4.5s ease-in-out infinite}
+.hf-title{font-family:'Jost',sans-serif;font-size:clamp(11px,2.9vw,14px);font-weight:600;line-height:1.18;letter-spacing:.03em;text-transform:uppercase;background:linear-gradient(110deg,var(--white) 0%,var(--white) 38%,#A8842F 48%,#E8CCCE 53%,var(--white) 62%,var(--white) 100%);background-size:280% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--white);animation:hfshine 4.5s ease-in-out infinite}
 @keyframes hfshine{0%{background-position:160% 0}55%{background-position:-60% 0}100%{background-position:-60% 0}}
 .hf-price{font-family:'Jost',sans-serif;font-weight:500;font-size:15px;color:var(--gold);margin-top:6px}
 
@@ -123,7 +123,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .bc a:hover{color:var(--gold)}
 .bc-d{color:var(--dim)}
 .info-coll{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
-.info-name{font-family:'Archivo',sans-serif;font-size:clamp(19px,2.1vw,25px);font-weight:600;line-height:1.22;color:var(--white);margin-bottom:7px;letter-spacing:.02em}
+.info-name{font-family:'Jost',sans-serif;font-size:clamp(19px,2.1vw,25px);font-weight:600;line-height:1.22;color:var(--white);margin-bottom:7px;letter-spacing:.02em}
 .info-sku{font-size:10px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
 .rat-row{display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .rat-stars{color:var(--gold);font-size:12px;letter-spacing:2px}
@@ -159,7 +159,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .sig-row:last-child{border-bottom:none}
 .sig-n{font-size:10px;color:var(--dim);width:22px;flex-shrink:0;letter-spacing:.06em}
 .sig-l{flex:1;font-size:12.5px;color:var(--text)}
-.sig-p{font-family:'Archivo',sans-serif;font-size:15px;color:var(--gold);font-weight:500;flex-shrink:0}
+.sig-p{font-family:'Jost',sans-serif;font-size:15px;color:var(--gold);font-weight:500;flex-shrink:0}
 
 .chip-g{border-color:var(--gold-lo);color:var(--gold);background:var(--bg-s)}
 /* BUNDLE */
@@ -167,7 +167,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .bnd-t{position:relative;border:1px solid var(--bdr);background:var(--bg-s);padding:22px 20px;text-align:center}
 .bnd-hl{border-color:var(--gold-lo)}
 .bnd-bb{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:8px;letter-spacing:.16em;text-transform:uppercase;padding:4px 12px}
-.bnd-tt{font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
+.bnd-tt{font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:6px}
 .bnd-tp{font-family:'Jost',sans-serif;font-weight:500;font-size:16px;color:var(--gold);margin-bottom:6px}
 .bnd-td{font-size:11px;color:var(--muted)}
 .bnd-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1080px;margin:0 auto}
@@ -231,7 +231,7 @@ button,input,select,textarea{font-family:inherit;outline:none}
 .spec-row{display:flex;border:1px solid var(--bdr)}
 .sc{flex:1;padding:13px 8px;text-align:center;border-right:1px solid var(--bdr)}
 .sc:last-child{border-right:none}
-.sc-v{font-family:'Archivo',sans-serif;font-size:20px;font-weight:500;color:var(--white)}
+.sc-v{font-family:'Jost',sans-serif;font-size:20px;font-weight:500;color:var(--white)}
 .sc-l{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 
 /* OFFER */
@@ -289,7 +289,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .pxt-c{max-width:540px;margin:0 auto;text-align:center}
 .pxt-c .pd{margin:0 auto}
 .pe{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#E8CCCE;margin-bottom:14px}
-.ph{font-family:'Archivo',sans-serif;font-size:clamp(22px,3.4vw,38px);font-weight:600;line-height:1.15;color:#FFFFFF;margin-bottom:16px;letter-spacing:.03em;text-transform:uppercase}
+.ph{font-family:'Jost',sans-serif;font-size:clamp(22px,3.4vw,38px);font-weight:600;line-height:1.15;color:#FFFFFF;margin-bottom:16px;letter-spacing:.03em;text-transform:uppercase}
 .pd{font-size:14px;color:rgba(255,255,255,.82);line-height:1.75;max-width:400px}
 .pxt-r .pd{margin-left:auto}
 .pxl-hr{border:none;border-top:1px solid var(--bdr)}
@@ -316,7 +316,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .fc:hover .fi img{transform:scale(1.04)}
 .ft{padding:28px 30px 34px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center}
 .fte{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.fth{font-family:'Archivo',sans-serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3;letter-spacing:.05em;text-transform:uppercase}
+.fth{font-family:'Jost',sans-serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.3;letter-spacing:.03em;text-transform:uppercase}
 .ftd{font-size:13px;color:var(--sub);line-height:1.7;max-width:380px;margin:0 auto}
 
 /* TRYON */
@@ -324,7 +324,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .tz{border:1px solid var(--bdr-l);padding:0 30px;text-align:center;cursor:pointer;transition:border-color .2s;height:420px;display:flex;flex-direction:column;justify-content:center}
 .tz:hover{border-color:var(--gold-lo)}
 .tze{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-.tzh{font-family:'Archivo',sans-serif;font-size:20px;color:var(--white);margin-bottom:8px}
+.tzh{font-family:'Jost',sans-serif;font-size:20px;color:var(--white);margin-bottom:8px}
 .tzn{font-size:12px;color:var(--muted);line-height:1.6}
 .tzd{font-size:11px;color:var(--dim);margin-top:10px;line-height:1.5}
 
@@ -333,7 +333,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .bpt td{padding:13px 0;font-size:13px;border-bottom:1px solid var(--bdr);color:var(--sub)}
 .bpt td:last-child{text-align:right;color:var(--text)}
 .bpt-tot td{color:var(--white);font-size:15px;border-bottom:none;padding-top:18px}
-.bpt-tot td:last-child{font-family:'Archivo',sans-serif;font-size:26px;color:var(--gold)}
+.bpt-tot td:last-child{font-family:'Jost',sans-serif;font-size:26px;color:var(--gold)}
 
 /* DETAILS */
 .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);max-width:900px;margin:0 auto}
@@ -346,7 +346,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .svg{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--bdr);max-width:1200px;margin:0 auto}
 .svc-c{background:var(--bg);padding:26px 14px;text-align:center;min-width:0}
 .svc-c .svc-l,.svc-c .svc-s{overflow-wrap:break-word}
-.svc-n{font-family:'Archivo',sans-serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
+.svc-n{font-family:'Jost',sans-serif;font-size:30px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:7px}
 .svc-l{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
 .svc-s{font-size:11px;color:var(--muted);line-height:1.5}
 
@@ -355,7 +355,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .satc.show{transform:translateY(0)}
 .si{display:flex;flex-direction:column;gap:2px}
 .si-n{font-size:12px;font-weight:500;color:var(--white)}
-.si-p{font-family:'Archivo',sans-serif;font-size:22px;color:var(--gold)}
+.si-p{font-family:'Jost',sans-serif;font-size:22px;color:var(--gold)}
 .sb{flex-shrink:0;padding:12px 32px;background:var(--gold);color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s}
 .sb:hover{background:var(--gold-hi)}
 
@@ -387,7 +387,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .ugc-img img{width:100%;height:100%;object-fit:cover}
 .ugc-info{padding:18px 22px 24px}
 .ugc-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:6px}
-.ugc-who{font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--white);margin-bottom:8px}
+.ugc-who{font-family:'Jost',sans-serif;font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--white);margin-bottom:8px}
 .ugc-quote{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:12px}
 .ugc-tag{display:inline-block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-lo);background:var(--bg-s);padding:4px 10px;border-radius:3px}
 .lbbg{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:210;display:none;align-items:center;justify-content:center;padding:24px}
@@ -406,7 +406,7 @@ textarea.gi{resize:vertical;min-height:56px}
 .mob-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
 .mob-hd img{height:28px;}
 .mob-x{background:none;border:none;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
-.mob-a{font-family:'Archivo',sans-serif;font-size:22px;color:var(--white);padding:13px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s}
+.mob-a{font-family:'Jost',sans-serif;font-size:22px;color:var(--white);padding:13px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s}
 .mob-a:hover,.mob-a.sale{color:var(--gold)}
 
 /* ── RESPONSIVE ───────────────────────────────────────── */
