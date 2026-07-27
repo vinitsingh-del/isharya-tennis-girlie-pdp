@@ -339,6 +339,56 @@ textarea.gi{resize:vertical;min-height:56px}
 .un{font-size:11px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.04em}
 .uno{font-size:10px;color:rgba(255,255,255,.55);margin-top:2px}
 
+/* EXPERIENCE THE PRODUCT */
+.exp{padding:var(--sp) var(--px);background:linear-gradient(180deg,#fbf8f8 0%,#fff 100%);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
+.exp-hd{max-width:var(--max);margin:0 auto 28px;display:flex;align-items:end;justify-content:space-between;gap:24px}
+.exp-hd-copy{max-width:620px}
+.exp-count{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.exp-stage{position:relative;max-width:var(--max);height:min(72vw,760px);min-height:560px;margin:0 auto;overflow:hidden;border:1px solid rgba(255,255,255,.72);border-radius:18px;background:#eadfe2;box-shadow:0 28px 70px rgba(69,30,41,.14)}
+.exp-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s cubic-bezier(.45,0,.15,1),visibility .9s;overflow:hidden}
+.exp-slide.on{opacity:1;visibility:visible}
+.exp-slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 6.2s cubic-bezier(.2,.55,.25,1);will-change:transform}
+.exp-slide.on img{transform:scale(1.15)}
+.exp-slide:nth-child(2) img{object-position:52% 44%}
+.exp-slide:nth-child(3) img{object-position:center 48%}
+.exp-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,12,15,.52) 0%,rgba(22,12,15,.08) 58%,transparent 78%)}
+.exp-glass{position:absolute;z-index:3;left:clamp(18px,4vw,56px);bottom:clamp(74px,8vw,112px);width:min(420px,calc(100% - 36px));padding:26px 28px;border:1px solid rgba(255,255,255,.56);border-radius:14px;background:rgba(255,255,255,.7);box-shadow:0 20px 54px rgba(31,12,17,.18);backdrop-filter:blur(22px) saturate(1.35);-webkit-backdrop-filter:blur(22px) saturate(1.35)}
+.exp-kicker{font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.exp-title{font-family:'Epilogue',sans-serif;font-size:clamp(20px,2.7vw,34px);line-height:1.15;font-weight:500;text-transform:uppercase;color:#000}
+.exp-copy{margin-top:12px;font-size:13px;line-height:1.7;color:#4d4749;max-width:350px}
+.exp-proof{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.exp-proof span{padding:7px 10px;border:1px solid rgba(112,48,65,.2);background:rgba(255,255,255,.55);font-size:8px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#4d4749}
+.exp-nav{position:absolute;z-index:4;left:clamp(18px,4vw,56px);right:clamp(18px,4vw,56px);bottom:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.exp-tab{position:relative;min-height:44px;padding:13px 14px;border:1px solid rgba(255,255,255,.5);border-radius:4px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);color:#241a1d;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:left;overflow:hidden;cursor:pointer}
+.exp-tab::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:#703041}
+.exp-tab.on{background:rgba(255,255,255,.9);border-color:rgba(255,255,255,.9)}
+.exp-tab.on::after{right:0;transition:right 4.8s linear}
+.exp-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:var(--max);margin:18px auto 0;padding:18px 20px;border:1px solid var(--bdr);background:rgba(255,255,255,.78);box-shadow:0 12px 30px rgba(69,30,41,.06)}
+.exp-cta-copy{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.exp-cta-copy b{font-family:'Epilogue',sans-serif;font-size:14px;font-weight:500;text-transform:uppercase}
+.exp-cta-copy span{font-size:11px;color:var(--muted)}
+.exp-cta button{min-width:190px;padding:14px 24px;border:0;border-radius:50px;background:#000;color:#fff;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.exp-cta button:hover{background:#703041}
+@media(max-width:700px){
+  .exp{padding:44px 12px}
+  .exp-hd{display:block;padding:0 4px;margin-bottom:20px}
+  .exp-count{margin-top:12px}
+  .exp-stage{height:78vh;min-height:570px;border-radius:12px}
+  .exp-slide img{object-position:center}
+  .exp-shade{background:linear-gradient(0deg,rgba(22,12,15,.48) 0%,transparent 62%)}
+  .exp-glass{left:14px;right:14px;bottom:104px;width:auto;padding:20px;border-radius:10px}
+  .exp-title{font-size:22px}
+  .exp-copy{font-size:12px}
+  .exp-nav{left:14px;right:14px;bottom:14px;gap:5px}
+  .exp-tab{padding:11px 8px;font-size:7.5px;text-align:center}
+  .exp-cta{align-items:stretch;flex-direction:column;padding:16px}
+  .exp-cta button{width:100%;min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){
+  .exp-slide,.exp-slide img,.exp-tab::after{transition:none!important;animation:none!important}
+  .exp-slide.on img{transform:none}
+}
+
 /* FEATURES */
 .fg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bdr);max-width:1080px;margin:0 auto}
 .fc{background:var(--bg);overflow:hidden;display:flex;flex-direction:column}
@@ -911,6 +961,62 @@ body{background:#fff;color:#000;font-family:'Work Sans',sans-serif;font-size:15p
   </div>
 </div>
 
+<!-- EXPERIENCE THE PRODUCT -->
+<section class="exp reveal" id="experienceProduct" aria-labelledby="experienceTitle">
+  <div class="exp-hd">
+    <div class="exp-hd-copy">
+      <div class="eyebrow">Experience the product</div>
+      <h2 class="sec-h" id="experienceTitle">See how it comes alive</h2>
+      <p class="sec-s">From the first sparkle to the final look—see the front-back silhouette, scale and movement in context.</p>
+    </div>
+    <div class="exp-count" id="expCount" aria-live="polite">01 / 03</div>
+  </div>
+  <div class="exp-stage" id="expStage">
+    <article class="exp-slide on" data-exp-slide>
+      <img src="assets/experience-detail.jpeg" alt="Close detail of the Tennis Girlie front-back earring on the ear">
+      <div class="exp-shade"></div>
+      <div class="exp-glass">
+        <div class="exp-kicker">01 · The Detail</div>
+        <h3 class="exp-title">Light, from every angle</h3>
+        <p class="exp-copy">Marquise-cut crystal zirconia creates an open arc of sparkle while the front-back construction adds dimension without visual weight.</p>
+        <div class="exp-proof"><span>Precision set</span><span>Front-back design</span></div>
+      </div>
+    </article>
+    <article class="exp-slide" data-exp-slide>
+      <img src="assets/experience-profile.jpeg" alt="Profile view showing the scale of the Tennis Girlie earrings">
+      <div class="exp-shade"></div>
+      <div class="exp-glass">
+        <div class="exp-kicker">02 · The Proportion</div>
+        <h3 class="exp-title">A statement that stays effortless</h3>
+        <p class="exp-copy">The 30mm silhouette frames the face with a clean, balanced profile—distinctive enough for evening, refined enough for every day.</p>
+        <div class="exp-proof"><span>30mm height</span><span>4.2g per pair</span></div>
+      </div>
+    </article>
+    <article class="exp-slide" data-exp-slide>
+      <img src="assets/experience-mirror.jpeg" alt="Woman styling the Tennis Girlie earrings in a mirror">
+      <div class="exp-shade"></div>
+      <div class="exp-glass">
+        <div class="exp-kicker">03 · The Ritual</div>
+        <h3 class="exp-title">Your finishing touch</h3>
+        <p class="exp-copy">A versatile gold-and-crystal finish designed to move from soft tailoring to celebration dressing with no styling rules required.</p>
+        <div class="exp-proof"><span>18K gold plated</span><span>Gift-ready</span></div>
+      </div>
+    </article>
+    <div class="exp-nav" role="tablist" aria-label="Product experience scenes">
+      <button class="exp-tab on" role="tab" aria-selected="true" onclick="setExperience(0,true)">The Detail</button>
+      <button class="exp-tab" role="tab" aria-selected="false" onclick="setExperience(1,true)">The Proportion</button>
+      <button class="exp-tab" role="tab" aria-selected="false" onclick="setExperience(2,true)">The Ritual</button>
+    </div>
+  </div>
+  <div class="exp-cta">
+    <div class="exp-cta-copy">
+      <b>Ready to make it yours?</b>
+      <span>₹3,999 · Inclusive of taxes · 7-day easy returns</span>
+    </div>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+</section>
+
 <!-- PARALLAX -->
 <section class="reveal" style="margin-top:var(--sp)">
   <div class="pxl-panel">
@@ -1164,6 +1270,32 @@ strip.addEventListener('mousedown',e=>{dn=true;strip.style.cursor='grabbing';sx=
 strip.addEventListener('mouseleave',()=>{dn=false;strip.style.cursor='grab';});
 strip.addEventListener('mouseup',()=>{dn=false;strip.style.cursor='grab';});
 strip.addEventListener('mousemove',e=>{if(!dn)return;e.preventDefault();strip.scrollLeft=sl-(e.pageX-strip.offsetLeft-sx);});
+
+const expSlides=[...document.querySelectorAll('[data-exp-slide]')];
+const expTabs=[...document.querySelectorAll('.exp-tab')];
+const expStage=document.getElementById('expStage');
+const expCount=document.getElementById('expCount');
+const expReduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+let expIndex=0,expTimer=null,expVisible=true;
+function setExperience(index,manual=false){
+  expIndex=(index+expSlides.length)%expSlides.length;
+  expSlides.forEach((slide,i)=>slide.classList.toggle('on',i===expIndex));
+  expTabs.forEach((tab,i)=>{const active=i===expIndex;tab.classList.toggle('on',active);tab.setAttribute('aria-selected',active?'true':'false');});
+  expCount.textContent=String(expIndex+1).padStart(2,'0')+' / '+String(expSlides.length).padStart(2,'0');
+  if(manual)restartExperience();
+}
+function startExperience(){if(expReduce||expTimer||!expVisible)return;expTimer=setInterval(()=>setExperience(expIndex+1),4800);}
+function stopExperience(){if(expTimer){clearInterval(expTimer);expTimer=null;}}
+function restartExperience(){stopExperience();startExperience();}
+if(expStage){
+  expStage.addEventListener('mouseenter',stopExperience);
+  expStage.addEventListener('mouseleave',startExperience);
+  expStage.addEventListener('focusin',stopExperience);
+  expStage.addEventListener('focusout',startExperience);
+  const expObserver=new IntersectionObserver(entries=>{expVisible=entries[0].isIntersecting;if(expVisible)startExperience();else stopExperience();},{threshold:.2});
+  expObserver.observe(expStage);
+  startExperience();
+}
 </script>
 
 <script>
