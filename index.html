@@ -714,6 +714,53 @@ body{background:#fff;color:#000;font-family:'Work Sans',sans-serif;font-size:15p
   .spin-zoom-meta span{font-size:8px;line-height:1.5}
   .spin-zoom-badge{right:14px;bottom:16px;padding:10px 13px}
 }
+
+/* COMPACT MOBILE PURCHASE DOCK */
+@media(max-width:1080px){
+  .satc{
+    bottom:max(8px,env(safe-area-inset-bottom));
+    left:50%;
+    right:auto;
+    width:min(calc(100% - 20px),680px);
+    padding:8px 8px 8px 12px;
+    flex-direction:row;
+    align-items:center;
+    gap:10px;
+    border:1px solid rgba(112,48,65,.16);
+    border-radius:14px;
+    background:rgba(255,255,255,.88);
+    box-shadow:0 10px 28px rgba(36,16,22,.14);
+    backdrop-filter:blur(20px) saturate(1.25);
+    -webkit-backdrop-filter:blur(20px) saturate(1.25);
+    transform:translate(-50%,130%);
+  }
+  .satc.show{transform:translate(-50%,0)}
+  .satc-trust{display:none}
+  .satc-row{gap:10px;min-width:0}
+  .si{min-width:0;gap:1px}
+  .satc .si-n{max-width:150px;font-size:9px;font-weight:600;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;color:#4d4749;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .satc .si-p{font-family:'Epilogue',sans-serif;font-size:16px;font-weight:500;line-height:1.25;color:#000;white-space:nowrap}
+  .si-was{font-size:9px;color:#9d9497;margin-left:3px}
+  .satc-btns{gap:6px}
+  .satc-btns .sb{
+    min-height:38px;
+    padding:0 15px;
+    border-radius:999px;
+    font-size:8px;
+    letter-spacing:.12em;
+    box-shadow:none;
+  }
+  .satc-btns .sb-o{background:#fff!important;color:#000!important;border-color:#000!important}
+  .satc-btns .sb:not(.sb-o){background:#000;color:#fff}
+}
+@media(max-width:430px){
+  .satc{width:calc(100% - 16px);padding-left:11px;gap:7px}
+  .satc-row{gap:7px}
+  .satc .si-n{max-width:105px;font-size:8px}
+  .satc .si-p{font-size:14px}
+  .satc-btns{gap:5px}
+  .satc-btns .sb{min-height:36px;padding:0 11px;font-size:7.5px}
+}
 </style>
 </head>
 <body>
@@ -1125,10 +1172,10 @@ body{background:#fff;color:#000;font-family:'Work Sans',sans-serif;font-size:15p
 <div class="satc" id="satcEl">
   <div class="satc-trust">Hallmarked &#183; Anti-Tarnish &#183; 7-Day Returns</div>
   <div class="satc-row">
-    <div class="si"><div class="si-n">Tennis Girlie Square</div><div class="si-p">Rs.3,999 <span class="si-was">Rs.4,999</span></div></div>
+    <div class="si"><div class="si-n">Tennis Girlie Square</div><div class="si-p">₹3,999 <span class="si-was">₹4,999</span></div></div>
     <div class="satc-btns">
-      <button class="sb sb-o" onclick="addToCart()">Add to Cart</button>
-      <button class="sb" onclick="buyNow()">Buy Now</button>
+      <button class="sb sb-o" onclick="addToCart()" aria-label="Add Tennis Girlie Square earrings to cart">Add to Cart</button>
+      <button class="sb" onclick="buyNow()" aria-label="Buy Tennis Girlie Square earrings now">Buy Now</button>
     </div>
   </div>
 </div>
