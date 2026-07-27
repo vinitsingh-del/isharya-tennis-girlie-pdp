@@ -777,6 +777,90 @@ body{background:#fff;color:#000;font-family:'Work Sans',sans-serif;font-size:15p
   .satc-btns{gap:5px}
   .satc-btns .sb{min-height:36px;padding:0 11px;font-size:7.5px}
 }
+
+/* REFINED TYPOGRAPHY MOTION
+   Content stays visible without JavaScript; motion-ready is added only after setup. */
+:root{
+  --motion-luxury:cubic-bezier(.22,1,.36,1);
+  --motion-soft:cubic-bezier(.33,1,.68,1);
+}
+.title-line{display:block;overflow:hidden;padding-bottom:.07em;margin-bottom:-.07em}
+.title-line>span{display:block}
+.motion-ready [data-type-reveal]{
+  opacity:0;
+  transform:translate3d(0,14px,0);
+  transition:
+    opacity 680ms var(--motion-luxury),
+    transform 680ms var(--motion-luxury);
+  transition-delay:var(--type-delay,0ms);
+  will-change:opacity,transform;
+}
+.motion-ready [data-type-reveal].type-in{opacity:1;transform:translate3d(0,0,0)}
+.motion-ready .title-line>span{
+  opacity:0;
+  transform:translate3d(0,108%,0);
+  transition:
+    opacity 720ms var(--motion-luxury),
+    transform 820ms var(--motion-luxury);
+  transition-delay:var(--line-delay,0ms);
+  will-change:opacity,transform;
+}
+.motion-ready .type-in .title-line>span{opacity:1;transform:translate3d(0,0,0)}
+.motion-ready .chips .chip{
+  opacity:0;
+  transform:translate3d(0,9px,0);
+  transition:
+    opacity 520ms var(--motion-luxury),
+    transform 520ms var(--motion-luxury),
+    color .2s ease,
+    border-color .2s ease,
+    background-color .2s ease;
+  transition-delay:calc(var(--chip-index,0) * 55ms + 110ms);
+}
+.motion-ready .chips.type-in .chip{opacity:1;transform:translate3d(0,0,0)}
+.price-main{position:relative;overflow:hidden}
+.price-main.price-in::after{
+  content:"";
+  position:absolute;
+  inset:-20% auto -20% -38%;
+  width:30%;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.68),transparent);
+  transform:skewX(-18deg);
+  animation:priceSweep 900ms var(--motion-soft) 520ms 1 both;
+}
+.motion-ready .p-was{text-decoration:none;position:relative}
+.motion-ready .p-was::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:52%;
+  height:1px;
+  background:currentColor;
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform 520ms var(--motion-luxury) 560ms;
+}
+.motion-ready .price-in .p-was::after{transform:scaleX(1)}
+@keyframes priceSweep{
+  from{left:-38%;opacity:0}
+  22%{opacity:.8}
+  to{left:116%;opacity:0}
+}
+@media(max-width:700px){
+  .motion-ready [data-type-reveal]{transform:translate3d(0,10px,0)}
+  .motion-ready .title-line>span{transform:translate3d(0,102%,0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-ready [data-type-reveal],
+  .motion-ready .title-line>span,
+  .motion-ready .chips .chip{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+    animation:none!important;
+  }
+  .price-main::after,.motion-ready .p-was::after{display:none!important}
+}
 </style>
 </head>
 <body>
@@ -879,7 +963,10 @@ body{background:#fff;color:#000;font-family:'Work Sans',sans-serif;font-size:15p
         <span>Tennis Girlie</span>
       </div>
       <div class="info-coll">Tennis Collection</div>
-      <h1 class="info-name">Tennis Girlie Square<br>Front Back Earrings</h1>
+      <h1 class="info-name" data-title-reveal>
+        <span class="title-line"><span>Tennis Girlie Square</span></span>
+        <span class="title-line"><span>Front Back Earrings</span></span>
+      </h1>
       <div class="info-sku">E2627-65-710</div>
       <div class="rat-row">
         <span class="rat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -900,7 +987,7 @@ body{background:#fff;color:#000;font-family:'Work Sans',sans-serif;font-size:15p
       <div class="irow">
         <div class="itag">PRICE</div>
         <div class="ib">
-          <div style="margin-bottom:4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+          <div class="price-main" style="margin-bottom:4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
             <span class="p-num">Rs.3,999</span>
             <span class="p-was">Rs.4,999</span>
             <span class="p-save">You save Rs.1,000 (20%)</span>
@@ -1321,8 +1408,66 @@ let atcVisible=true,hasScrolled=false;
 new IntersectionObserver(entries=>{entries.forEach(e=>{atcVisible=e.isIntersecting;updSatc();});},{threshold:0}).observe(document.getElementById('mainAtcBtn'));
 window.addEventListener('scroll',()=>{if(window.scrollY>320)hasScrolled=true;if(window.scrollY<=60)hasScrolled=false;updSatc();},{passive:true});
 function updSatc(){if(window.innerWidth>1080)return;satcEl.classList.toggle('show',hasScrolled&&!atcVisible);}
-new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}}); },{threshold:0.06}).observe(document.body);
-document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');}});},{threshold:0.06}).observe(el));
+const revealObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealObserver.unobserve(e.target);}});},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+/* Reusable, typography-first reveal system. */
+const motionConfig={
+  startDelay:1250,
+  viewportThreshold:.12,
+  viewportMargin:'0px 0px -7% 0px',
+  sectionStep:95
+};
+function markTypeSequence(selector){
+  document.querySelectorAll(selector).forEach(group=>{
+    [...group.children].forEach((el,index)=>{
+      if(el.matches('img,video,picture,button'))return;
+      el.dataset.typeReveal='';
+      el.style.setProperty('--type-delay',(index*motionConfig.sectionStep)+'ms');
+    });
+  });
+}
+function prepareTypeMotion(){
+  const intro=[
+    ['.info-coll',0],['[data-title-reveal]',90],['.info-sku',225],
+    ['.rat-row',285],['.chips',345],['.price-main',110],
+    ['.p-note',175],['.p-urg',235],['.p-emi',285],['.qty-r',330],['.cta-s',380]
+  ];
+  intro.forEach(([selector,delay])=>{
+    const el=document.querySelector(selector);
+    if(!el)return;
+    el.dataset.typeReveal='';
+    el.style.setProperty('--type-delay',delay+'ms');
+  });
+  document.querySelectorAll('.title-line').forEach((line,index)=>line.firstElementChild.style.setProperty('--line-delay',(index*105+90)+'ms'));
+  document.querySelectorAll('.chips .chip').forEach((chip,index)=>chip.style.setProperty('--chip-index',index));
+  markTypeSequence('.shd');
+  markTypeSequence('.pxt-c');
+  markTypeSequence('.exp-hd');
+  markTypeSequence('.exp-glass');
+  markTypeSequence('.styling-head');
+  markTypeSequence('.celebrity-head');
+}
+function initTypeMotion(){
+  prepareTypeMotion();
+  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  document.documentElement.classList.add('motion-ready');
+  const typeEls=[...document.querySelectorAll('[data-type-reveal]')];
+  if(reduced||!('IntersectionObserver' in window)){
+    typeEls.forEach(el=>el.classList.add('type-in'));
+    return;
+  }
+  const typeObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add('type-in');
+      if(entry.target.classList.contains('price-main'))entry.target.classList.add('price-in');
+      typeObserver.unobserve(entry.target);
+    });
+  },{threshold:motionConfig.viewportThreshold,rootMargin:motionConfig.viewportMargin});
+  typeEls.forEach(el=>typeObserver.observe(el));
+}
+setTimeout(initTypeMotion,motionConfig.startDelay);
 const pxls=document.querySelectorAll('[data-parallax]');
 function applyPx(){pxls.forEach(el=>{const p=el.closest('.pxl-panel');if(!p)return;const r=p.getBoundingClientRect();el.style.transform='translateY('+(r.top*(parseFloat(el.dataset.parallax)||.35))+'px)';});}
 window.addEventListener('scroll',applyPx,{passive:true});applyPx();
